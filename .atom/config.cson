@@ -9,6 +9,7 @@
       "one-dark-ui"
       "base16-ocean-dark-syntax-theme"
     ]
+    titleBar: "custom"
   editor:
     fontFamily: "Inconsolata-g"
     tabLength: 4
@@ -18,5 +19,8 @@
     plugins:
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   welcome:
     showOnStartup: false

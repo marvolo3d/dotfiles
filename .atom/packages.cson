@@ -1,0 +1,13 @@
+packages: [
+  "atom-beautify"
+  "base16-ocean-dark-syntax-theme"
+  "file-icons"
+  "git-plus"
+  "highlight-selected"
+  "markdown-preview-plus"
+  "markdown-scroll-sync"
+  "Maya"
+  "minimap"
+  "minimap-highlight-selected"
+  "package-sync"
+]
