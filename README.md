@@ -38,63 +38,53 @@ http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repositor
 
 ----
 ### • command reference •
-#### file management
-* copy files over ssh using `scp`
-    * copy from a remote host to local:
-       ```bash
-        scp user@remotehost:/path/to/file /path/to/local/dir
-        ````
-
-* copy from local to a remote host: `scp /path/to/local/file user@remotehost:/path/to/dir`
-
-#### string manipulation
+all commands should work on both linux and osx unless noted otherwise
+#### string manipulation - search and replace
 * search and replace words in file(s)
-```bash
-sed -i 's/string_to_find/replacement_string/g' *.py
-sed -i 's/string_to_find/replacement_string/g' <filename>```
+    ```bash
+    sed -i 's/string_to_find/replacement_string/g' *.py
+    sed -i 's/string_to_find/replacement_string/g' <filename>
+    ```
 
 * recursively find names of files containing string
-```bash
-grep -rl "string_to_find" .
-grep -rl "string_to_find" <path>```
+    ```bash
+    grep -rl "string_to_find" .
+    grep -rl "string_to_find" <path>
+    ```
 
 * recursively find files containing string and replace
-```bash
-grep -rl "string_to_find" <path> | xargs sed -i 's/string_to_find/replacement_string/g'```
+    ```bash
+    grep -rl "string_to_find" <path> | xargs sed -i 's/string_to_find/replacement_string/g'
+    ```
 
 #### file management
 
-* recursively find and delete all files with <substring> in their name
-```bash
-find . -name "*<substring>*" -delete
-find <path> -name "*<substring>*" -delete
-```
+* recursively find and delete all files with `<substring>` in their name
+    ```bash
+    find . -name "*<substring>*" -delete
+    find <path> -name "*<substring>*" -delete
+    ```
 
 * recursively find and delete all folders with <substring> in their name
-```bash
-find . -name "*<substring>*" | xargs rm -r
-find <path> -name "*<substring>*" | xargs rm -r
-```
+    ```bash
+    find . -name "*<substring>*" | xargs rm -r
+    find <path> -name "*<substring>*" | xargs rm -r
+    ```
 
+* copy files over `ssh` using `scp`
+    * copy from a remote host to local: `scp user@remotehost:/path/to/file /path/to/local/dir`
+    * copy from local to a remote host: `scp /path/to/local/file user@remotehost:/path/to/dir`
 
+* operate on all files recursively (any command)
+    * something like `find /path/to/find <options> -exec <command>`??
+        * not certain of exact exec syntax  
 #### disk management
 
-* find size of directory
-```bash
-sudo du -sh <dirname>
-```
+* find size of directory: `du -sh <dirname>`
 
-* btrfs file system size
-```bash
-sudo btrfs fi usage <mount-point>
-```
+* btrfs file system size: `sudo btrfs fi usage <mount-point>`
 
-#### permissions
-* recursively *chmod* all directories  
-```bash
-find /path/to/find -type f -exec chmod 755 {} +`
-```
-* recursively *chmod* all files  
-```bash
-find /path/to/find -type f -exec chmod 644 {} +
-```
+#### permission managment - chmod and chown
+* recursively `chmod` all directories: `find /path/to/find -type f -exec chmod 755 {} +`
+* recursively `chmod` all files: `find /path/to/find -type f -exec chmod 644 {} +`
+* change owner and group of file or directory: `chown newUser:newGroup <target>`
