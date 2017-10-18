@@ -1,7 +1,22 @@
 "*":
   core:
+    autoHideMenuBar: true
+    disabledPackages: [
+      "wrap-guide"
+    ]
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "base16-ocean-dark-syntax-theme"
+    ]
+  editor:
+    fontFamily: "Inconsolata-g"
+    tabLength: 4
   "exception-reporting":
     userId: "b87a80b3-b72e-4ac2-9294-a674673c997f"
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
   welcome:
     showOnStartup: false
