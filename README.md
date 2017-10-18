@@ -24,7 +24,9 @@ http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repositor
 
 ----
 ### • notes2me •
-* add a command reference for commonly used but often forgotten commands
+* ~~add a command reference for commonly used but often forgotten commands~~
+    * this is wip - may split out of README into separate files
+    * add git command reference
 * switch to zsh and integrate that config here
 * adopt tmux and it's config
 * write sync.sh for quick setup
@@ -90,3 +92,6 @@ all commands should work on both linux and osx unless noted otherwise
 * recursively `chmod` all directories: `find /path/to/find -type f -exec chmod 755 {} +`
 * recursively `chmod` all files: `find /path/to/find -type f -exec chmod 644 {} +`
 * change owner and group of file or directory: `chown newUser:newGroup <target>`
+
+#### other useful references, cheatsheets and resources
+* [adam-p markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
