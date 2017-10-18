@@ -40,6 +40,7 @@ http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repositor
 ### • command reference •
 all commands should work on both linux and osx unless noted otherwise
 #### string manipulation - search and replace
+
 * search and replace words in file(s)
     ```bash
     sed -i 's/string_to_find/replacement_string/g' *.py
@@ -78,13 +79,14 @@ all commands should work on both linux and osx unless noted otherwise
 * operate on all files recursively (any command)
     * something like `find /path/to/find <options> -exec <command>`??
         * not certain of exact exec syntax  
+
 #### disk management
 
 * find size of directory: `du -sh <dirname>`
-
 * btrfs file system size: `sudo btrfs fi usage <mount-point>`
 
 #### permission managment - chmod and chown
+
 * recursively `chmod` all directories: `find /path/to/find -type f -exec chmod 755 {} +`
 * recursively `chmod` all files: `find /path/to/find -type f -exec chmod 644 {} +`
 * change owner and group of file or directory: `chown newUser:newGroup <target>`
