@@ -48,13 +48,11 @@ all commands should work on both linux and osx unless noted otherwise
     sed -i 's/string_to_find/replacement_string/g' *.py
     sed -i 's/string_to_find/replacement_string/g' <filename>
     ```
-
 * recursively find names of files containing string
     ```bash
     grep -rl "string_to_find" .
     grep -rl "string_to_find" <path>
     ```
-
 * recursively find files containing string and replace
     ```bash
     grep -rl "string_to_find" <path> | xargs sed -i 's/string_to_find/replacement_string/g'
