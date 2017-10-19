@@ -9,7 +9,10 @@ _lightgray="\\033[38;5;244m"
 
 export PS1="$_blue\u$_blue2@\h $_purp\W $_gray$ $_lightgray"
 
-export PATH=$PATH:~/bin:/Applications/ChaosGroup/V-Ray/Maya2018/bin
+export PATH=$PATH:~/bin:/Applications/ChaosGroup/V-Ray/Maya2018/bin:/Applications/Autodesk/maya2018/Maya.app/Contents/bin
+
+export LIBRARY="$HOME/dungeon"
+export OCIO="$LIBRARY/ocio/spi-anim/config.ocio"
 
 # aliases
 alias lh="ls -lh"

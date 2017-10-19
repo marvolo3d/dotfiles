@@ -33,7 +33,7 @@ http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repositor
 * add commonly used shell scripts
     * wacom (linux)
     * screencap (linux)
-* investigate storing some of maya, nuke, and mari configs
+* investigate storing some of maya, houdini, nuke, and mari configs
     * and possibly zbrush for osx  
 * modify *.profile* and *.bashrc* to source common alias + function files
 * create checks in *.profile* and *.bashrc* to set prompt coloring based on hostname
@@ -73,6 +73,7 @@ all commands should work on both linux and osx unless noted otherwise
 * copy files over `ssh` using `scp`  
     * copy from a remote host to local: `scp user@remotehost:/path/to/file /path/to/local/dir`
     * copy from local to a remote host: `scp /path/to/local/file user@remotehost:/path/to/dir`
+    * `-r` flag to copy dirs, just like regular cp
 * operate on all files recursively (any command)
     * something like `find /path/to/find <options> -exec <command>`??
         * not certain of exact exec syntax  
@@ -87,6 +88,11 @@ all commands should work on both linux and osx unless noted otherwise
 * recursively `chmod` all directories: `find /path/to/find -type f -exec chmod 755 {} +`
 * recursively `chmod` all files: `find /path/to/find -type f -exec chmod 644 {} +`
 * change owner and group of file or directory: `chown newUser:newGroup <target>`
+
+#### nfs exports
+* nfs exports live in */etc/exports*
+* update exports with `exportfs -ra`
+* macos mount linux nfs share: `nfs://hostname:sharename`
 
 #### other useful references, cheatsheets and resources
 * [adam-p markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
