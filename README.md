@@ -67,17 +67,14 @@ all commands should work on both linux and osx unless noted otherwise
     find . -name "*<substring>*" -delete
     find <path> -name "*<substring>*" -delete
     ```
-
 * recursively find and delete all folders with <substring> in their name
     ```bash
     find . -name "*<substring>*" | xargs rm -r
     find <path> -name "*<substring>*" | xargs rm -r
     ```
-
-* copy files over `ssh` using `scp`
+* copy files over `ssh` using `scp`  
     * copy from a remote host to local: `scp user@remotehost:/path/to/file /path/to/local/dir`
     * copy from local to a remote host: `scp /path/to/local/file user@remotehost:/path/to/dir`
-
 * operate on all files recursively (any command)
     * something like `find /path/to/find <options> -exec <command>`??
         * not certain of exact exec syntax  
