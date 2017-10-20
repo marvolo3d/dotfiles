@@ -5,31 +5,11 @@
 # and interactive shell. Login shells read ~/.profile and interactive shells
 # read ~/.bashrc; in our setup, /etc/profile sources ~/.bashrc - thus all
 # settings made here will also take effect in a login shell.
-#
-# NOTE: It is recommended to make language settings in ~/.profile rather than
-# here, since multilingual X sessions would not work properly if LANG is over-
-# ridden in every subshell.
-
-# Some applications read the EDITOR variable to determine your favourite text
-# editor. So uncomment the line below and enter the editor of your choice :-)
-#export EDITOR=/usr/bin/vim
-#export EDITOR=/usr/bin/mcedit
-
-# For some news readers it makes sense to specify the NEWSSERVER variable here
-#export NEWSSERVER=your.news.server
-
-# If you want to use a Palm device with Linux, uncomment the two lines below.
-# For some (older) Palm Pilots, you might need to set a lower baud rate
-# e.g. 57600 or 38400; lowest is 9600 (very slow!)
-#
-#export PILOTPORT=/dev/pilot
-#export PILOTRATE=115200
 
 # source aliases
 test -s ~/.alias && . ~/.alias || true
 
 export EDITOR='nano'
-export VISUAL='subl'
 
 # OCIO
 export OCIO="$LIBRARY/ocio_config/spi-anim/config.ocio"
@@ -38,7 +18,6 @@ export OCIO="$LIBRARY/ocio_config/spi-anim/config.ocio"
 export MAYA_AUTOSAVE_FOLDER="/var/tmp/maya_auto"
 
 # yeti
-# export peregrinel_LICENSE="5053@localhost"
 export YETI_TMP="/var/tmp/yeti"
 export YETI_HOME="/opt/yeti"
 export RMAN_PROCEDURALS_PATH="/opt/yeti/bin" # for renderman
@@ -56,9 +35,6 @@ export NUKE_DISK_CACHE_GB=2
 # general
 export LIBRARY="$HOME/library"
 export PROJECTS="$HOME/projects"
-export FREELANCE="$HOME/freelance_projects"
-# export SHELLSCRIPTS="$HOME/shell_scripts"
-export XEON="/mnt/xeon_home/"
 
 # renderman
 # export RMSTREE=/opt/pixar/RenderManForMaya-21.3-maya2017
@@ -82,20 +58,18 @@ export REDSHIFT_PREFSPATH="$HOME/redshift/preferences.xml"
 export REDSHIFT_LICENSEPATH="$HOME/redshift"
 
 # vray
-#export PATH=$PATH:/usr/ChaosGroup/V-Ray/Maya2017-x64/bin
 export PATH=$PATH:/usr/ChaosGroup/V-Ray/Maya2018-x64/bin
-#export PATH=$PATH:/usr/ChaosGroup/VRLSerivce/OLS #not working?
 export VRAY_VFB_SRGB=2 #off
 #export VRAY_VFB_SRGB=1 #on
 #export VRAY_VFB_OCIO=2 #off
 export VRAY_VFB_OCIO=1 #on
 
-# source houdini commandline utils
+# initialize houdini env
 cd /opt/hfs/
 . ./houdini_setup &> /dev/null
 cd ~
 
-# set env for ultimate RLM server
+# set env for RLM
 export foundry_LICENSE="5053@localhost"
 export peregrinel_LICENSE="5053@localhost"
 export RLM_LICENSE=/opt/rlm
