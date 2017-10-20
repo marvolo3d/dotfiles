@@ -7,6 +7,9 @@
 
 #### general
 * atom config
+* *Maya.env* and maya startup script *userSetup.py*
+* *houdini.env*
+* *sync.sh* to sync all dotfiles (incomplete)
 
 #### osx
 * .profile
