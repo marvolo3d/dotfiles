@@ -39,7 +39,7 @@ http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repositor
 * add commonly used shell scripts
     * wacom (linux)
     * screencap (linux)
-* investigate storing some of maya, houdini, nuke, and mari configs
+* investigate storing some of ~~maya~~, ~~houdini~~, nuke, and mari configs
     * and possibly zbrush for osx  
 * modify *.profile* and *.bashrc* to source common alias + function files
 * create checks in *.profile* and *.bashrc* to set prompt coloring based on hostname
