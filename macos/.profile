@@ -39,12 +39,3 @@ function transfer {
     echo -e "\nupload complete: $_blue2$transfer_url$_lightgray\n"
     #notify-send "$transfer_url" -t 2000 #notify
 }
-
-# (osx bash/ksh)
-QLIB=$LIBRARY/houdini/third_part/qLib
-QOTL=$QLIB/otls
-
-export HOUDINI_OTLSCAN_PATH=$QOTL/base:$QOTL/future:$QOTL/experimental:@/otls
-export HOUDINI_GALLERY_PATH=$QLIB/gallery:@/gallery
-export HOUDINI_TOOLBAR_PATH=$QLIB/toolbar:@/toolbar
-export HOUDINI_SCRIPT_PATH=$QLIB/scripts:@/scripts
