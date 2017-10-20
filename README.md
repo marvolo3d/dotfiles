@@ -7,7 +7,6 @@
 
 #### general
 * atom config
-* common aliases and functions
 
 #### osx
 * .profile
@@ -15,6 +14,8 @@
 
 #### linux
 * .bashrc
+* .alias
+
 ----
 ### • useful dotfile setup links •
 * [iterm2 settings sync](
@@ -24,11 +25,13 @@ http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repositor
 
 ----
 ### • notes2me •
+* split .alias into multiple files - common (osx and lin), and os specific
+    * sourced from .bashrc and .profile
 * ~~add a command reference for commonly used but often forgotten commands~~
     * this is wip - may split out of README into separate files
     * add git command reference
-* switch to zsh and integrate that config here
-* adopt tmux and it's config
+* zsh
+* tmux
 * write sync.sh for quick setup
 * add commonly used shell scripts
     * wacom (linux)
