@@ -1,0 +1,9 @@
+opdefaultshape -c
+opdefaultshape Sop circle
+opdefaultshape Dop circle
+opdefaultshape Pop circle
+opdefaultshape Cop2 circle
+opdefaultshape Chop circle
+opdefaultshape Object circle
+opdefaultshape Sop attribwrangle cloud
+opdefaultcolor Sop attribwrangle 'RGB 0.443, 0.780, 0.127'
