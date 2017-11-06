@@ -14,6 +14,11 @@ export PATH=$PATH:~/bin:/Applications/ChaosGroup/V-Ray/Maya2018/bin:/Application
 export LIBRARY="$HOME/dungeon"
 export OCIO="$LIBRARY/ocio/spi-anim/config.ocio"
 
+# set variables for apps launched from launchpad, dock, spotlight
+launchctl setenv LIBRARY $LIBRARY
+launchctl setenv OCIO $OCIO
+launchctl setenv PATH $PATH
+
 # aliases
 alias lh="ls -lh"
 alias la="ls -a"
