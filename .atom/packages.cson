@@ -4,6 +4,7 @@ packages: [
   "file-icons"
   "git-plus"
   "highlight-selected"
+  "language-vex"
   "markdown-preview-plus"
   "markdown-scroll-sync"
   "Maya"
