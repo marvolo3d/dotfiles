@@ -1,5 +1,5 @@
 # these files start with a •
-... beginnings of my dotfiles setup for linux and osx
+something something dotfiles (linux and osx)
 
 ----
 
@@ -89,7 +89,7 @@ all commands should work on both linux and osx unless noted otherwise
 * find size of directory: `du -sh <dirname>`
 * btrfs file system size: `sudo btrfs fi usage <mount-point>`
 
-#### permission managment - chmod and chown
+#### permission management - chmod and chown
 
 * recursively `chmod` all directories: `find /path/to/find -type f -exec chmod 755 {} +`
 * recursively `chmod` all files: `find /path/to/find -type f -exec chmod 644 {} +`
@@ -100,5 +100,10 @@ all commands should work on both linux and osx unless noted otherwise
 * update exports with `exportfs -ra`
 * macos mount linux nfs share: `nfs://hostname:sharename`
 
-#### other useful references, cheatsheets and resources
+----
+####  • other useful references, cheatsheets and resources •
+##### markdown
 * [adam-p markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+##### python
+ * [PEP 8 style guide for python code](https://www.python.org/dev/peps/pep-0008/)
+ * [PEP 257 docstring conventions guide](https://www.python.org/dev/peps/pep-0257/)
