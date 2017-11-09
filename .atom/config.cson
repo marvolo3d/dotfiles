@@ -2,6 +2,8 @@
   "atom-beautify":
     general:
       _analyticsUserId: "e1e606c9-7d7a-4224-8899-f80c71ab7d86"
+  "atom-ide-ui":
+    use: {}
   core:
     autoHideMenuBar: true
     telemetryConsent: "limited"
