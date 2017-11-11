@@ -75,7 +75,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>115 406 796 473 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>143 391 810 567 0 0 1680 1028 </string>
+	<string>143 391 825 567 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>637 229 1034 734 0 0 1680 1028 </string>
 	<key>New Bookmarks</key>
@@ -754,13 +754,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-28T18:48:06Z</date>
+	<date>2017-11-06T01:41:08Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.40667317708333339</real>
 	<key>StretchTabsToFillBar</key>
