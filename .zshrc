@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/marvolo/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -97,3 +97,6 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 setopt extendedglob # enable extended globbing features
+
+
+source "/home/tom.norman/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
