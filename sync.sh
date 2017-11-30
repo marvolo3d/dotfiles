@@ -13,5 +13,11 @@
 
 #create symlinks to install dir and /users/shared/zbrushdata for brushes, materials, plugins from $LIBRARY (if library exists)
 
+# install zsh
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # install custom zsh plugins
 # git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+# install zsh spaceship theme
+#curl -o - https://raw.githubusercontent.com/denysdovhan/spaceship-zsh-theme/master/install.zsh | zsh
