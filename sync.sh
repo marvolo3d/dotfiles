@@ -12,3 +12,6 @@
 
 
 #create symlinks to install dir and /users/shared/zbrushdata for brushes, materials, plugins from $LIBRARY (if library exists)
+
+# install custom zsh plugins
+# git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
