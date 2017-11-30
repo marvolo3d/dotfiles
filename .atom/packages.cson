@@ -15,4 +15,5 @@ packages: [
   "minimap-highlight-selected"
   "package-sync"
   "platformio-ide-terminal"
+  "split-diff"
 ]
