@@ -7,13 +7,9 @@
   core:
     autoHideMenuBar: true
     telemetryConsent: "limited"
-    themes: [
-      "one-dark-ui"
-      "base16-ocean-dark-syntax-theme"
-    ]
     titleBar: "custom"
   editor:
-    fontFamily: "Inconsolata-g"
+    fontFamily: "Inconsolata-g for Powerline"
     tabLength: 4
   "exception-reporting":
     userId: "b87a80b3-b72e-4ac2-9294-a674673c997f"
