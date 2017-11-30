@@ -107,3 +107,5 @@ all commands should work on both linux and osx unless noted otherwise
 ##### python
  * [PEP 8 style guide for python code](https://www.python.org/dev/peps/pep-0008/)
  * [PEP 257 docstring conventions guide](https://www.python.org/dev/peps/pep-0257/)
+##### zsh
+* [zsh installation](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
