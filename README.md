@@ -6,18 +6,17 @@ something something dotfiles (linux and osx)
 ## • contents •
 
 #### general
+* zsh and oh-my-zsh config
 * atom config
 * *Maya.env* and maya startup script *userSetup.py*
 * *houdini.env*
 * *sync.sh* to sync all dotfiles (incomplete)
 
 #### osx
-* .profile
 * iterm2 config
 
 #### linux
-* .bashrc
-* .alias
+* no penguin specifics yet
 
 ----
 ### • useful dotfile setup links •
@@ -28,12 +27,9 @@ http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repositor
 
 ----
 ### • notes2me •
-* split .alias into multiple files - common (osx and lin), and os specific
-    * sourced from .bashrc and .profile
 * ~~add a command reference for commonly used but often forgotten commands~~
-    * this is wip - may split out of README into separate files
+    * this is wip - will split out of README into separate files
     * add git command reference
-* zsh
 * tmux
 * write sync.sh for quick setup
 * add commonly used shell scripts
@@ -41,12 +37,11 @@ http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repositor
     * screencap (linux)
 * investigate storing some of ~~maya~~, ~~houdini~~, nuke, and mari configs
     * and possibly zbrush for osx  
-* modify *.profile* and *.bashrc* to source common alias + function files
-* create checks in *.profile* and *.bashrc* to set prompt coloring based on hostname
 
 ----
 ### • command reference •
-all commands should work on both linux and osx unless noted otherwise
+* all commands should work on both linux and osx unless noted otherwise
+* will update some of this with zsh goodies sometime
 #### string manipulation - search and replace
 
 * search and replace words in file(s)
