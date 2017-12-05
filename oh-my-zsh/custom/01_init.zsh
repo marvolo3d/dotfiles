@@ -12,6 +12,24 @@ alias la="ls -a"
 alias ll="ls -l"
 alias lm="ls -lh -sort"
 
+alias removeExtensions="for x in *;do mv $x ${x%*.*};done"
+
+# functions
+function pad_files {
+    num=`expr match "$1" '[^0-9]*\([0-9]\+\).*'`
+    paddednum=`printf "%03d" $num`
+    echo ${1/$num/$paddednum}
+}
+
+function colors {
+    color=16;
+
+    while [ $color -lt 245 ]; do
+        echo -e "$color: \\033[38;5;${color}mhello\\033[48;5;${color}mworld\\033[0m"
+        ((color++));
+    done
+}
+
 # ----------
 # os specifc
 # ----------
@@ -44,8 +62,13 @@ if [[ `uname` == 'Darwin' ]]; then
     }
 elif [[ `uname` == 'Linux' ]]; then
 
-    # do linux things
+    # environment
+    export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
+    # functions
+    function supercaps {
+        setxkbmap -option caps:super
+    }
 fi
 
 # show screenfetch
