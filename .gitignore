@@ -3,5 +3,6 @@
 /atom/compile-cache/
 /atom/packages/
 /atom/storage/
+/atom/nohup.out
 
 .DS_Store
