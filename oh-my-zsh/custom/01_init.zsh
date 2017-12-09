@@ -145,11 +145,13 @@ elif [[ `uname` == 'Linux' ]]; then
     }
 
     # transparent blur konsole
-    konsolex=$(qdbus | grep konsole | cut -f 2 -d\ )
-    if [ -n "$konsolex" ]; then
-        for konsole in `xdotool search --class konsole`; do
-            xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $konsole;
-        done
+    if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then #only blur konsole if local session
+        konsolex=$(qdbus | grep konsole | cut -f 2 -d\ )
+        if [ -n "$konsolex" ]; then
+            for konsole in `xdotool search --class konsole`; do
+                xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $konsole;
+            done
+        fi
     fi
 
     function FTPmount {
