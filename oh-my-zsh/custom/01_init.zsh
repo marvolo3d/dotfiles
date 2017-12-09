@@ -136,7 +136,7 @@ elif [[ `uname` == 'Linux' ]]; then
 
     alias rv="/opt/rv/bin/rv"
     alias mari="/opt/mari/mari &"
-    alias nuke="/opt/nuke/Nuke11.0 -b"
+    alias nuke="/opt/nuke/Nuke* -b"
     alias maya="/usr/autodesk/maya2018/bin/maya2018 -nosplash &"
 
     # functions
