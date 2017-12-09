@@ -97,6 +97,3 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 setopt extendedglob # enable extended globbing features
-
-
-source "/home/tom.norman/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
