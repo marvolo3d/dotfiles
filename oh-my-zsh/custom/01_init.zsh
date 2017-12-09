@@ -46,9 +46,11 @@ if [[ `uname` == 'Darwin' ]]; then
     launchctl setenv PATH $PATH
 
     # houdini config
-    cd /Applications/Houdini/Current/Frameworks/Houdini.framework/Versions/Current/Resources/
-    . ./houdini_setup
-    cd
+    if [ -d "/Applications/Houdini/Current/Frameworks/Houdini.framework/Versions/Current/Resources/" ]; then
+        cd /Applications/Houdini/Current/Frameworks/Houdini.framework/Versions/Current/Resources/
+        . ./houdini_setup
+        cd
+    fi
 
     # aliases
     alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
@@ -60,6 +62,7 @@ if [[ `uname` == 'Darwin' ]]; then
         echo -n $transfer_url | pbcopy
         echo -e "\nupload complete: $_blue2$transfer_url$_lightgray\n"
     }
+    
 elif [[ `uname` == 'Linux' ]]; then
 
     # environment
