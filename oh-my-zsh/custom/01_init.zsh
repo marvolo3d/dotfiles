@@ -87,6 +87,11 @@ elif [[ `uname` == 'Linux' ]]; then
     export REDSHIFT_MAYAEXTENSIONSPATH="/opt/yeti/plug-ins"
 
     # nuke
+    TNT_NUKE_ICONS="/home/marvolo/dungeon/nuke/scripts/tnt_nuke/icons"
+    CRYPTOMATTE_ICONS="/home/marvolo/dungeon/nuke/scripts/third_party/icons"
+    PGBOKEH="/home/marvolo/dungeon/nuke/plugins/pgBokeh"
+    export NUKE_PATH=$TNT_NUKE_ICONS:$CRYPTOMATTE_ICONS:$PGBOKEH
+
     export NUKE_TEMP_DIR="/var/tmp/nuke"
     export NUKE_DISK_CACHE="/var/tmp/nuke/viewer"
     export NUKE_DISK_CACHE_GB=2
@@ -136,7 +141,7 @@ elif [[ `uname` == 'Linux' ]]; then
 
     alias rv="/opt/rv/bin/rv"
     alias mari="/opt/mari/mari &"
-    alias nuke="/opt/nuke/Nuke* -b"
+    alias nuke="/opt/nuke/Nuke* &"
     alias maya="/usr/autodesk/maya2018/bin/maya2018 -nosplash &"
 
     # functions
