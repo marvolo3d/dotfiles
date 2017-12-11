@@ -69,80 +69,82 @@ elif [[ `uname` == 'Linux' ]]; then
     # environment
     # -----------
 
-    if [ -z $(echo $PATH | grep $HOME/bin) ]; then
-        export PATH=$PATH:$HOME/bin
+    # if [ -z $(echo $PATH | grep $HOME/bin) ]; then
+    #     export PATH=$PATH:$HOME/bin
+    # fi
+    #
+    # if [ -z $(echo $PATH | grep $HOME/.local/bin) ]; then
+    #     export PATH=$PATH:$HOME/.local/bin
+    # fi
+
+    if [ -z "(hostname | grep stellar)" ]; then
+        # maya
+        export MAYA_AUTOSAVE_FOLDER="/var/tmp/maya_auto"
+
+        # yeti
+        export YETI_TMP="/var/tmp/yeti"
+        export YETI_HOME="/opt/yeti"
+        export RMAN_PROCEDURALS_PATH="/opt/yeti/bin" # for renderman
+        export REDSHIFT_MAYAEXTENSIONSPATH="/opt/yeti/plug-ins"
+
+        # nuke
+        TNT_NUKE_ICONS="/home/marvolo/dungeon/nuke/scripts/tnt_nuke/icons"
+        CRYPTOMATTE_ICONS="/home/marvolo/dungeon/nuke/scripts/third_party/icons"
+        PGBOKEH="/home/marvolo/dungeon/nuke/plugins/pgBokeh"
+        export NUKE_PATH=$TNT_NUKE_ICONS:$CRYPTOMATTE_ICONS:$PGBOKEH
+
+        export NUKE_TEMP_DIR="/var/tmp/nuke"
+        export NUKE_DISK_CACHE="/var/tmp/nuke/viewer"
+        export NUKE_DISK_CACHE_GB=2
+
+        # mari
+        # export MARI_COLORSPACE_USER_INTERFACE_MODE=2 #advanced color space options
+        # export MARI_SCRIPT_PATH= <list of mari script paths>
+
+        export PROJECTS="$HOME/projects"
+
+        # renderman
+        # export RMSTREE=/opt/pixar/RenderManForMaya-21.3-maya2017
+        # export RMANTREE=/opt/pixar/RenderManProServer-21.3
+        # export MAYA_RENDER_DESC_PATH=$RMSTREE/etc/rmanRenderer.xml #for command line renders
+        # export PATH=$PATH:$RMANTREE/bin #:/usr/ChaosGroup/V-Ray/Maya2017-x64/bin
+
+        # arnold
+        # export PATH=$PATH:/opt/solidangle/mtoa/2017/bin #for maketx
+
+        # al shaders
+        # export ALSHADERS_INSTALL="/opt/alShaders"
+        # export ARNOLD_PLUGIN_PATH=$ALSHADERS_INSTALL/bin
+        # export MTOA_TEMPLATES_PATH=$ALSHADERS_INSTALL/ae
+        # export MAYA_CUSTOM_TEMPLATE_PATH=$ALSHADERS_INSTALL/aexml
+
+        # redshift
+        export REDSHIFT_COREDATAPATH="/opt/redshift" #_experimental"
+        export REDSHIFT_LOCALDATAPATH="$HOME/redshift"
+        export REDSHIFT_PREFSPATH="$HOME/redshift/preferences.xml"
+        export REDSHIFT_LICENSEPATH="$HOME/redshift"
+
+        # vray
+        export PATH=$PATH:/usr/ChaosGroup/V-Ray/Maya2018-x64/bin
+        export VRAY_VFB_SRGB=2 #off
+        #export VRAY_VFB_SRGB=1 #on
+        #export VRAY_VFB_OCIO=2 #off
+        export VRAY_VFB_OCIO=1 #on
+
+        # ---------------
+        # end environment
+        # ---------------
+
+        # aliases
+        alias gpu="konsole -e watch -n 1 nvidia-smi &> /dev/null"
+
+        alias vrlctl="/usr/ChaosGroup/VRLService/OLS/vrlctl" #made alias because appending to PATH wasn't working
+
+        alias rv="/opt/rv/bin/rv"
+        alias mari="/opt/mari/mari &"
+        alias nuke="/opt/nuke/Nuke* &"
+        alias maya="/usr/autodesk/maya2018/bin/maya2018 -nosplash &"
     fi
-
-    if [ -z $(echo $PATH | grep $HOME/.local/bin) ]; then
-        export PATH=$PATH:$HOME/.local/bin
-    fi
-
-    # maya
-    export MAYA_AUTOSAVE_FOLDER="/var/tmp/maya_auto"
-
-    # yeti
-    export YETI_TMP="/var/tmp/yeti"
-    export YETI_HOME="/opt/yeti"
-    export RMAN_PROCEDURALS_PATH="/opt/yeti/bin" # for renderman
-    export REDSHIFT_MAYAEXTENSIONSPATH="/opt/yeti/plug-ins"
-
-    # nuke
-    TNT_NUKE_ICONS="/home/marvolo/dungeon/nuke/scripts/tnt_nuke/icons"
-    CRYPTOMATTE_ICONS="/home/marvolo/dungeon/nuke/scripts/third_party/icons"
-    PGBOKEH="/home/marvolo/dungeon/nuke/plugins/pgBokeh"
-    export NUKE_PATH=$TNT_NUKE_ICONS:$CRYPTOMATTE_ICONS:$PGBOKEH
-
-    export NUKE_TEMP_DIR="/var/tmp/nuke"
-    export NUKE_DISK_CACHE="/var/tmp/nuke/viewer"
-    export NUKE_DISK_CACHE_GB=2
-
-    # mari
-    # export MARI_COLORSPACE_USER_INTERFACE_MODE=2 #advanced color space options
-    # export MARI_SCRIPT_PATH= <list of mari script paths>
-
-    export PROJECTS="$HOME/projects"
-
-    # renderman
-    # export RMSTREE=/opt/pixar/RenderManForMaya-21.3-maya2017
-    # export RMANTREE=/opt/pixar/RenderManProServer-21.3
-    # export MAYA_RENDER_DESC_PATH=$RMSTREE/etc/rmanRenderer.xml #for command line renders
-    # export PATH=$PATH:$RMANTREE/bin #:/usr/ChaosGroup/V-Ray/Maya2017-x64/bin
-
-    # arnold
-    # export PATH=$PATH:/opt/solidangle/mtoa/2017/bin #for maketx
-
-    # al shaders
-    # export ALSHADERS_INSTALL="/opt/alShaders"
-    # export ARNOLD_PLUGIN_PATH=$ALSHADERS_INSTALL/bin
-    # export MTOA_TEMPLATES_PATH=$ALSHADERS_INSTALL/ae
-    # export MAYA_CUSTOM_TEMPLATE_PATH=$ALSHADERS_INSTALL/aexml
-
-    # redshift
-    export REDSHIFT_COREDATAPATH="/opt/redshift" #_experimental"
-    export REDSHIFT_LOCALDATAPATH="$HOME/redshift"
-    export REDSHIFT_PREFSPATH="$HOME/redshift/preferences.xml"
-    export REDSHIFT_LICENSEPATH="$HOME/redshift"
-
-    # vray
-    export PATH=$PATH:/usr/ChaosGroup/V-Ray/Maya2018-x64/bin
-    export VRAY_VFB_SRGB=2 #off
-    #export VRAY_VFB_SRGB=1 #on
-    #export VRAY_VFB_OCIO=2 #off
-    export VRAY_VFB_OCIO=1 #on
-
-    # ---------------
-    # end environment
-    # ---------------
-
-    # aliases
-    alias gpu="konsole -e watch -n 1 nvidia-smi &> /dev/null"
-
-    alias vrlctl="/usr/ChaosGroup/VRLService/OLS/vrlctl" #made alias because appending to PATH wasn't working
-
-    alias rv="/opt/rv/bin/rv"
-    alias mari="/opt/mari/mari &"
-    alias nuke="/opt/nuke/Nuke* &"
-    alias maya="/usr/autodesk/maya2018/bin/maya2018 -nosplash &"
 
     # functions
     function supercaps {
@@ -150,7 +152,7 @@ elif [[ `uname` == 'Linux' ]]; then
     }
 
     # transparent blur konsole
-    if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then #only blur konsole if local session
+    if [ "$(echo $DESKTOP_SESSION | grep kde)" ] && [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then #only blur konsole if local session
         konsolex=$(qdbus | grep konsole | cut -f 2 -d\ )
         if [ -n "$konsolex" ]; then
             for konsole in `xdotool search --class konsole`; do
@@ -334,7 +336,7 @@ elif [[ `uname` == 'Linux' ]]; then
 
 fi
 
-# show screenfetch
+# show neofetch
 echo -e "\n"
-screenfetch -E
+neofetch
 echo -e "\n"
