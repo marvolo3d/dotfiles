@@ -69,11 +69,11 @@ elif [[ `uname` == 'Linux' ]]; then
     # environment
     # -----------
 
-    if [ ! -z $(echo $PATH | grep $HOME/bin) ]; then
+    if [ -z $(echo $PATH | grep $HOME/bin) ]; then
         export PATH=$PATH:$HOME/bin
     fi
 
-    if [ ! -z $(echo $PATH | grep $HOME/.local/bin) ]; then
+    if [ -z $(echo $PATH | grep $HOME/.local/bin) ]; then
         export PATH=$PATH:$HOME/.local/bin
     fi
 
