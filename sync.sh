@@ -30,3 +30,10 @@ cd fonts
 # clean-up a bit
 cd ..
 rm -rf fonts
+
+#symlink neofetch config to
+#~/.config/neofetch
+
+#get neofetch latest
+#https://github.com/dylanaraps/neofetch/archive/3.3.0.tar.gz
+#then sudo make install
