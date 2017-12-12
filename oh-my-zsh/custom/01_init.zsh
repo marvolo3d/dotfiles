@@ -152,7 +152,7 @@ elif [[ `uname` == 'Linux' ]]; then
     }
 
     # transparent blur konsole
-    if [ "$(echo $DESKTOP_SESSION | grep kde)" ] && [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then #only blur konsole if local session
+    if [ ! -z $XDG_SESSION_DESKTOP ] && [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then #only blur konsole if local session
         konsolex=$(qdbus | grep konsole | cut -f 2 -d\ )
         if [ -n "$konsolex" ]; then
             for konsole in `xdotool search --class konsole`; do
