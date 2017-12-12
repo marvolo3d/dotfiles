@@ -69,13 +69,13 @@ elif [[ `uname` == 'Linux' ]]; then
     # environment
     # -----------
 
-    # if [ -z $(echo $PATH | grep $HOME/bin) ]; then
-    #     export PATH=$PATH:$HOME/bin
-    # fi
-    #
-    # if [ -z $(echo $PATH | grep $HOME/.local/bin) ]; then
-    #     export PATH=$PATH:$HOME/.local/bin
-    # fi
+    if [ -z $(echo $PATH | grep $HOME/bin) ]; then
+        export PATH=$PATH:$HOME/bin
+    fi
+
+    if [ -z $(echo $PATH | grep $HOME/.local/bin) ]; then
+        export PATH=$PATH:$HOME/.local/bin
+    fi
 
     if [ -z "(hostname | grep stellar)" ]; then
         # maya
