@@ -6,12 +6,16 @@ if [[ `uname` == 'Darwin' ]]; then
     echo "none for osx" > /dev/null
 elif [[ `uname` == 'Linux' ]]; then
 
-    function bell {
-        mplayer "/usr/share/sounds/freedesktop/stereo/bell.oga" &> /dev/null
-    }
-
     function supercaps {
         setxkbmap -option caps:super
+    }
+
+    function disable_caps {
+        setxkbmap -option caps:none
+    }
+
+    function bell {
+        mplayer "/usr/share/sounds/freedesktop/stereo/bell.oga" &> /dev/null
     }
 
     function update_firefox {
@@ -20,10 +24,6 @@ elif [[ `uname` == 'Linux' ]]; then
         echo "firefox updated succesfully"
 
         bell
-    }
-
-    function disable_caps {
-        setxkbmap -option caps:none
     }
 
     function sound_fix {
