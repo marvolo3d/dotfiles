@@ -35,7 +35,7 @@ elif [[ `uname` == 'Linux' ]]; then
         export PATH=$PATH:$HOME/.local/bin
     fi
 
-    if [ -z "(hostname | grep stellar)" ]; then
+    if [ -z "$(hostname | grep stellar)" ]; then
         # maya
         export MAYA_AUTOSAVE_FOLDER="/var/tmp/maya_auto"
 
@@ -90,7 +90,7 @@ elif [[ `uname` == 'Linux' ]]; then
 	# initialize houdini env
 	cd /opt/hfs/
 	. ./houdini_setup &> /dev/null
-	cd ~		
+	cd ~
 
     fi
 
