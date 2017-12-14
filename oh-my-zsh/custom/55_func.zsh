@@ -75,9 +75,7 @@ elif [[ `uname` == "Linux" ]]; then
 
     function tn_transfer {
         # mount site if not already
-        if [ -z "$(mount | grep tomnorman_ca/the_abyss)" ]; then
-            FTPmount
-        fi
+        FTPmount
 
         if [ "$1" == "-r" ]; then
             random=1
@@ -160,11 +158,14 @@ function colors {
 
 function transfer {
     transfer_url=$(curl -T ${1} "https://transfer.sh/"$(basename ${1}))
-    echo -n $transfer_url | pbcopy
+
     echo -e "\nupload complete: $_blue2$transfer_url$_lightgray\n"
-    if [[ `uname` == 'Darwin' ]]; then
+    if [[ `uname` == 'Linux' ]]; then
+        echo -n $transfer_url | xclip -selection clipboard
         notify-send "$transfer_url" -t 1500 #notify
         bell
+    elif [[ `uname` == 'Darwin' ]]; then
+        echo -n $transfer_url | pbcopy
     fi
 }
 
