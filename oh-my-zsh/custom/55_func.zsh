@@ -2,9 +2,9 @@
 # functions
 # ---------
 
-if [[ `uname` == 'Darwin' ]]; then
+if [[ `uname` == "Darwin" ]]; then
     echo "none for osx" > /dev/null
-elif [[ `uname` == 'Linux' ]]; then
+elif [[ `uname` == "Linux" ]]; then
 
     function bell {
         mplayer "/usr/share/sounds/freedesktop/stereo/bell.oga" &> /dev/null
@@ -192,5 +192,7 @@ function x264_encode {
     # ffmpeg -i "$1" -r $framerate -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p "${filename}_x264.mp4"
     ffmpeg -i "$1" -r $framerate -c:v libx264 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -preset veryslow -crf 18 -pix_fmt yuv420p "${filename}_x264.mp4"
 
-    if [[ `uname` == 'Linux' ]]; then; bell; fi
+    if [[ `uname` == 'Linux' ]]; then
+        bell
+    fi
 }
