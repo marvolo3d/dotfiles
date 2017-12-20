@@ -27,5 +27,6 @@ elif [[ `uname` == 'Linux' ]]; then
         alias mari="/opt/mari/mari &"
         alias nuke="/opt/nuke/Nuke* &"
         alias maya="/usr/autodesk/maya2018/bin/maya2018 -nosplash &"
+        alias mayapy="/usr/autodesk/maya2018/bin/mayapy"
     fi
 fi
