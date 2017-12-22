@@ -17,8 +17,7 @@ if [[ `uname` == 'Darwin' ]]; then
 elif [[ `uname` == 'Linux' ]]; then
 
     if [ -z "$(hostname | grep stellar)" ]; then
-        alias gpu="konsole -e watch -n 1 nvidia-smi &> /dev/null"
-
+        
         alias restartX="sudo systemctl restart sddm"
 
         alias vrlctl="/usr/ChaosGroup/VRLService/OLS/vrlctl" #made alias because appending to PATH wasn't working
@@ -28,4 +27,6 @@ elif [[ `uname` == 'Linux' ]]; then
         alias nuke="/opt/nuke/Nuke* &"
         alias maya="/usr/autodesk/maya2018/bin/maya2018 -nosplash &"
     fi
+
+    alias gpuwatch="watch -n 1 nvidia-smi"
 fi
