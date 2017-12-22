@@ -74,10 +74,10 @@ elif [[ `uname` == "Linux" ]]; then
     }
 
     function tn_transfer {
-        # mount site if not already
-        FTPmount
+        # mount site
+        mftp
 
-        if [ "$1" == "-r" ]; then
+        if [ "$1" = "-r" ]; then
             random=1
             infile="$2"
         elif [ -z "$2" ]; then
@@ -88,7 +88,7 @@ elif [[ `uname` == "Linux" ]]; then
         filename="$(basename $infile)"
         targetdir="/mnt/tomnorman_ca/the_abyss/"
 
-        if [ $random == 1 ]; then
+        if [ $random = 1 ]; then
             pass=0
 
             while [ $pass -lt 1 ]
@@ -105,8 +105,7 @@ elif [[ `uname` == "Linux" ]]; then
                 # nounrand[1]="$(echo $noun | awk '{print $2}')"
                 # rand=$[ $RANDOM % 2 ]
                 # noun="${nounrand[$rand]}"
-
-                filename="${adj}${noun^}.${extension}"
+                filename="$adj${(C)noun}.$extension"
 
                 if [ ! -f "$targetdir$filename" ]; then
                     pass=1
@@ -121,13 +120,13 @@ elif [[ `uname` == "Linux" ]]; then
 
         result="http://tomnorman.ca/the_abyss/${filename}"
 
-        echo $result
+        echo "upload complete: " $result
 
-        echo -n $result | xclip -selection clipboard #copy link to clipboard
+        echo -n "$result" | xclip -selection clipboard #copy link to clipboard
 
         bell
 
-        notify-send "uploaded as fuck $result" -t 2000
+        notify-send "updoop donezo" " $result" -t 2000
     } #to be made os-agnostic eventually
 
     function vdenoise_anim {
@@ -141,25 +140,25 @@ elif [[ `uname` == "Linux" ]]; then
             return 1
         fi
 
-        if [ -z "$(mount | grep tomnorman_ca/goodies)" ]; then
-            curlftpfs tomnorman-ca2 /mnt/tomnorman_ca/goodies
-            echo "mounted tomnorman.ca/goodies at /mnt/tomnorman_ca/goodies"
-        else
-            echo "tomnorman.ca/goodies already mounted at /mnt/tomnorman_ca/goodies"
-        fi
+        # if [ -z "$(mount | grep tomnorman_ca/goodies)" ]; then
+        #     curlftpfs tomnorman-ca2 /mnt/tomnorman_ca/goodies
+        #     echo "mounted tomnorman.ca/goodies at /mnt/tomnorman_ca/goodies"
+        # else
+        #     echo "tomnorman.ca/goodies already mounted at /mnt/tomnorman_ca/goodies"
+        # fi
+        #
+        # if [ -z "$(mount | grep tomnorman_ca/the_abyss)" ]; then
+        #     curlftpfs tomnorman-ca /mnt/tomnorman_ca/the_abyss
+        #     echo "mounted tomnorman.ca/the_abyss at /mnt/tomnorman_ca/the_abyss"
+        # else
+        #     echo "tomnorman.ca/the_abyss already mounted at /mnt/tomnorman_ca/the_abyss"
+        # fi
 
-        if [ -z "$(mount | grep tomnorman_ca/the_abyss)" ]; then
-            curlftpfs tomnorman-ca /mnt/tomnorman_ca/the_abyss
-            echo "mounted tomnorman.ca/the_abyss at /mnt/tomnorman_ca/the_abyss"
+        if [ -z "$(mount | grep tomnorman_ca)" ]; then
+            curlftpfs tomnorman-ca3 /mnt/tomnorman_ca
+            echo "mounted tomnorman.ca at /mnt/tomnorman_ca/"
         else
-            echo "tomnorman.ca/the_abyss already mounted at /mnt/tomnorman_ca/the_abyss"
-        fi
-
-        if [ -z "$(mount | grep tomnorman_ca/public)" ]; then
-            curlftpfs tomnorman-ca3 /mnt/tomnorman_ca/public
-            echo "mounted tomnorman.ca/public at /mnt/tomnorman_ca/public"
-        else
-            echo "tomnorman.ca/public already mounted at /mnt/tomnorman_ca/public"
+            echo "tomnorman.ca already mounted at /mnt/tomnorman_ca/"
         fi
     }
 
@@ -224,4 +223,8 @@ function x264_encode {
     if [[ `uname` == 'Linux' ]]; then
         bell
     fi
+}
+
+function reloadFunc {
+    . ~/.oh-my-zsh/custom/55_func.zsh
 }
