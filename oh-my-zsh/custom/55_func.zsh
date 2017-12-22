@@ -135,6 +135,34 @@ elif [[ `uname` == "Linux" ]]; then
         bell
     } #vray vdenoise
 
+    function mftp {
+        if [ ! -e "$HOME/.netrc" ]; then
+            echo "ERROR: no .netrc for ftp credentials - aborting mount."
+            return 1
+        fi
+
+        if [ -z "$(mount | grep tomnorman_ca/goodies)" ]; then
+            curlftpfs tomnorman-ca2 /mnt/tomnorman_ca/goodies
+            echo "mounted tomnorman.ca/goodies at /mnt/tomnorman_ca/goodies"
+        else
+            echo "tomnorman.ca/goodies already mounted at /mnt/tomnorman_ca/goodies"
+        fi
+
+        if [ -z "$(mount | grep tomnorman_ca/the_abyss)" ]; then
+            curlftpfs tomnorman-ca /mnt/tomnorman_ca/the_abyss
+            echo "mounted tomnorman.ca/the_abyss at /mnt/tomnorman_ca/the_abyss"
+        else
+            echo "tomnorman.ca/the_abyss already mounted at /mnt/tomnorman_ca/the_abyss"
+        fi
+
+        if [ -z "$(mount | grep tomnorman_ca/public)" ]; then
+            curlftpfs tomnorman-ca3 /mnt/tomnorman_ca/public
+            echo "mounted tomnorman.ca/public at /mnt/tomnorman_ca/public"
+        else
+            echo "tomnorman.ca/public already mounted at /mnt/tomnorman_ca/public"
+        fi
+    }
+
 fi
 
 # -----------
