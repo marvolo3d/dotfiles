@@ -1,5 +1,5 @@
 [Background]
-Color=30,33,39
+Color=37,42,54
 
 [BackgroundFaint]
 Color=30,33,39
@@ -90,5 +90,5 @@ Color=171,178,191
 
 [General]
 Description=OneDark
-Opacity=0.84999999999999998
+Opacity=0.9
 Wallpaper=
