@@ -48,8 +48,8 @@ elif [[ `uname` == "Linux" ]]; then
 
         echo "vray render slave dr check"
 
-        macpro="$(vraydr_check -host=macpro -port=20207 2>&1)"
-        xeon="$(vraydr_check -host=xeon-ws -port=20207 2>&1)"
+        macpro="$(vraydr_check -host=macpro.local -port=20207 2>&1)"
+        xeon="$(vraydr_check -host=xeon-ws.local -port=20207 2>&1)"
 
         if [ -z "$(echo $macpro | grep -i ready)" ]; then
             macpro_result="\e[38;5;160mfailed: \e[38;5;244m$macpro"
