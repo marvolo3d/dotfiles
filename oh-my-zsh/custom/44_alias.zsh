@@ -30,4 +30,5 @@ elif [[ `uname` == 'Linux' ]]; then
     fi
 
     alias gpuwatch="watch -n 1 nvidia-smi"
+    alias mhz="watch -n1 'cat /proc/cpuinfo | grep -i mhz'"
 fi
