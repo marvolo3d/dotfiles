@@ -6,6 +6,9 @@
     use: {}
   core:
     autoHideMenuBar: true
+    disabledPackages: [
+      "markdown-scroll-sync"
+    ]
     telemetryConsent: "limited"
     titleBar: "custom"
   editor:
