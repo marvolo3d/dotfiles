@@ -78,6 +78,9 @@ http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repositor
 * operate on all files recursively (any command)
     * something like `find /path/to/find <options> -exec <command>`??
         * not certain of exact exec syntax  
+* __zmv__ for batch renaming
+    * change extension: `zmv '(*).tex' '$1.exr'`
+    * can alias noglob version for no quotes `alias mmv='noglob zmv -W'`
 
 #### disk management
 

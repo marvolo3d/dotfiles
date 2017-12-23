@@ -7,6 +7,9 @@ alias la="ls -a"
 alias ll="ls -l"
 alias lm="ls -lh -sort"
 
+alias mmv='noglob zmv -W' #no need for '' with zmv
+# mmv *.c.orig orig/*.
+
 alias removeExtensions="for x in *;do mv $x ${x%*.*};done"
 
 if [[ `uname` == 'Darwin' ]]; then
@@ -17,7 +20,7 @@ if [[ `uname` == 'Darwin' ]]; then
 elif [[ `uname` == 'Linux' ]]; then
 
     if [ -z "$(hostname | grep stellar)" ]; then
-        
+
         alias restartX="sudo systemctl restart sddm"
 
         alias vrlctl="/usr/ChaosGroup/VRLService/OLS/vrlctl" #made alias because appending to PATH wasn't working

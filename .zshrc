@@ -12,7 +12,7 @@ SPACESHIP_BATTERY_SHOW="false"
 # SPACESHIP_GIT_BRANCH_SHOW="false"
 
 # Set list of themes to load
-# Setting this variable when ZSH_THEME=random
+# Setting this variable when ZSH_THEME="spaceship"
 # cause zsh load theme from this variable instead of
 # looking in ~/.oh-my-zsh/themes/
 # An empty array have no effect
@@ -97,3 +97,8 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 setopt extendedglob # enable extended globbing features
+
+autoload -U zmv
+# you don't need the following two now, but put them also in your .zshrc
+alias zcp='zmv -C'
+alias zln='zmv -L'
