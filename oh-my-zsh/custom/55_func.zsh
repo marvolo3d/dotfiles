@@ -14,8 +14,10 @@ elif [[ `uname` == "Linux" ]]; then
         setxkbmap -option caps:none
     }
 
-    function bell {
-        mplayer "/usr/share/sounds/freedesktop/stereo/bell.oga" &> /dev/null
+    function mario_notify {
+        NOTIFY=$(ls ~/.notif/mario_N64 | shuf -n1) # choose random
+        NPATH="${HOME}/.notif/mario_N64/${NOTIFY}"
+        paplay $NPATH &!
     }
 
     function update_firefox {
@@ -23,7 +25,7 @@ elif [[ `uname` == "Linux" ]]; then
 
         echo "firefox updated succesfully"
 
-        bell
+        mario_notify
     }
 
     function sound_fix {
@@ -75,7 +77,7 @@ elif [[ `uname` == "Linux" ]]; then
 
     function tn_transfer {
         # mount site
-        mftp
+        mftp -q
 
         if [ "$1" = "-r" ]; then
             random=1
@@ -95,17 +97,17 @@ elif [[ `uname` == "Linux" ]]; then
             do
                 extension="${filename##*.}"
                 # noun="$(shuf -n1 /usr/share/wordnet-3.0/dict/noun.exc)"
-                noun="$(cat ~/Documents/animals | shuf -n1 )"
+                noun="$(cat /home/marvolo/Documents/animals | shuf -n1 )"
 
                 initial="$(echo $noun | head -c 1)" # get an adjective that starts with the same first letter
                 # adj="$(cat /usr/share/wordnet-3.0/dict/adj.exc | grep "^$initial" | shuf -n1 | awk '{print $2}')"
-                adj="$(cat ~/Documents/adjectives | grep -i "^$initial" | shuf -n1)"
+                adj="$(cat /home/marvolo/Documents/adjectives | grep -i "^$initial" | shuf -n1)"
 
                 # nounrand[0]="$(echo $noun | awk '{print $1}')"
                 # nounrand[1]="$(echo $noun | awk '{print $2}')"
                 # rand=$[ $RANDOM % 2 ]
                 # noun="${nounrand[$rand]}"
-                filename="$adj${(C)noun}.$extension"
+                filename="${adj}${(C)noun}.${extension}"
 
                 if [ ! -f "$targetdir$filename" ]; then
                     pass=1
@@ -120,45 +122,36 @@ elif [[ `uname` == "Linux" ]]; then
 
         result="http://tomnorman.ca/the_abyss/${filename}"
 
-        echo "upload complete: " $result
-
+        echo $result #to stdout
         echo -n "$result" | xclip -selection clipboard #copy link to clipboard
 
-        bell
+        notify-send "share it with the world." " $result" -t 2000
 
-        notify-send "updoop donezo" " $result" -t 2000
+        mario_notify
+
     } #to be made os-agnostic eventually
 
     function vdenoise_anim {
         vdenoise -inputFile="${1}" -useGpu=2 -abortOnOpenCLError=1
-        bell
+        mario_notify
     } #vray vdenoise
 
     function mftp {
+        # -q flag is quiet
         if [ ! -e "$HOME/.netrc" ]; then
-            echo "ERROR: no .netrc for ftp credentials - aborting mount."
+            echo "ERROR: no .netrc for ftp credentials - aborting FTP mounts"
             return 1
         fi
 
-        # if [ -z "$(mount | grep tomnorman_ca/goodies)" ]; then
-        #     curlftpfs tomnorman-ca2 /mnt/tomnorman_ca/goodies
-        #     echo "mounted tomnorman.ca/goodies at /mnt/tomnorman_ca/goodies"
-        # else
-        #     echo "tomnorman.ca/goodies already mounted at /mnt/tomnorman_ca/goodies"
-        # fi
-        #
-        # if [ -z "$(mount | grep tomnorman_ca/the_abyss)" ]; then
-        #     curlftpfs tomnorman-ca /mnt/tomnorman_ca/the_abyss
-        #     echo "mounted tomnorman.ca/the_abyss at /mnt/tomnorman_ca/the_abyss"
-        # else
-        #     echo "tomnorman.ca/the_abyss already mounted at /mnt/tomnorman_ca/the_abyss"
-        # fi
-
         if [ -z "$(mount | grep tomnorman_ca)" ]; then
             curlftpfs tomnorman-ca3 /mnt/tomnorman_ca
-            echo "mounted tomnorman.ca at /mnt/tomnorman_ca/"
+            if [ ! "$1" = "-q" ]; then
+                 echo "mounted tomnorman.ca at /mnt/tomnorman_ca/"
+            fi
         else
-            echo "tomnorman.ca already mounted at /mnt/tomnorman_ca/"
+            if [ ! "$1" = "-q" ]; then
+                 echo "tomnorman.ca already mounted at /mnt/tomnorman_ca/"
+            fi
         fi
     }
 
@@ -189,8 +182,8 @@ function transfer {
     echo -e "\nupload complete: $_blue2$transfer_url$_lightgray\n"
     if [[ `uname` == 'Linux' ]]; then
         echo -n $transfer_url | xclip -selection clipboard
-        notify-send "$transfer_url" -t 1500 #notify
-        bell
+        notify-send "transfer.sh" "$transfer_url" -t 1500 #notify
+        mario_notify
     elif [[ `uname` == 'Darwin' ]]; then
         echo -n $transfer_url | pbcopy
     fi
@@ -221,7 +214,7 @@ function x264_encode {
     ffmpeg -i "$1" -r $framerate -c:v libx264 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -preset veryslow -crf 18 -pix_fmt yuv420p "${filename}_x264.mp4"
 
     if [[ `uname` == 'Linux' ]]; then
-        bell
+        mario_notify
     fi
 }
 
