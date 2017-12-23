@@ -74,7 +74,7 @@ elif [[ `uname` == 'Linux' ]]; then
         # export MTOA_TEMPLATES_PATH=$ALSHADERS_INSTALL/ae
         # export MAYA_CUSTOM_TEMPLATE_PATH=$ALSHADERS_INSTALL/aexml
 
-        # redshift
+        # redshift ONLY SETTING FOR HOUDINI. these are taken care of for maya with the .mod
         export REDSHIFT_COREDATAPATH="/opt/redshift" #_experimental"
         export REDSHIFT_LOCALDATAPATH="$HOME/redshift"
         export REDSHIFT_PREFSPATH="$HOME/redshift/preferences.xml"
@@ -91,7 +91,7 @@ elif [[ `uname` == 'Linux' ]]; then
 	if [ -d "/opt/fs" ]; then
 		cd /opt/hfs/
 		. ./houdini_setup &> /dev/null
-		cd ~	
+		cd ~
 	fi
 
     fi
