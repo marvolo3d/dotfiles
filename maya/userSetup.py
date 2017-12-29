@@ -11,7 +11,7 @@ import pymel.core as pm
 
 if not pm.about(batch=1): #gui mode only
     # append python path
-    marvolo_maya_path = '{0}/maya/scripts'.format(os.environ['LIBRARY'])
+    marvolo_maya_path = '{0}/maya/scripts'.format(os.environ['DUNGEON'])
     sys.path.append(marvolo_maya_path)
 
     # import some python modules
