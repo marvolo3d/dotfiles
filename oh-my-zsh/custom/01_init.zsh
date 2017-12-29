@@ -4,8 +4,8 @@
 
 echo -e "\n" && neofetch && echo -e "\n"
 
-export LIBRARY="$HOME/dungeon"
-export OCIO="$LIBRARY/ocio/spi-anim/config.ocio"
+export DUNGEON="$HOME/dungeon"
+export OCIO="$DUNGEON/ocio/spi-anim/config.ocio"
 # export PROJECTS="$HOME/projects"
 
 if [[ `uname` == 'Darwin' ]]; then
@@ -14,7 +14,7 @@ if [[ `uname` == 'Darwin' ]]; then
     # source /Users/Shared/rlm/rlmenvset.sh
 
     # set env for apps launched via launchpad, spotlight, and dock
-    launchctl setenv LIBRARY $LIBRARY
+    launchctl setenv LIBRARY $DUNGEON
     launchctl setenv OCIO $OCIO
     launchctl setenv PATH $PATH
 
@@ -46,9 +46,9 @@ elif [[ `uname` == 'Linux' ]]; then
         export REDSHIFT_MAYAEXTENSIONSPATH="/opt/yeti/plug-ins"
 
         # nuke
-        TNT_NUKE_ICONS="$LIBRARY/nuke/scripts/tnt_nuke/icons"
-        CRYPTOMATTE_ICONS="$LIBRARY/nuke/scripts/third_party/icons"
-        PGBOKEH="$LIBRARY/nuke/plugins/pgBokeh"
+        TNT_NUKE_ICONS="$DUNGEON/nuke/scripts/tnt_nuke/icons"
+        CRYPTOMATTE_ICONS="$DUNGEON/nuke/scripts/third_party/icons"
+        PGBOKEH="$DUNGEON/nuke/plugins/pgBokeh"
         export NUKE_PATH=$TNT_NUKE_ICONS:$CRYPTOMATTE_ICONS:$PGBOKEH
 
         export NUKE_TEMP_DIR="/var/tmp/nuke"
