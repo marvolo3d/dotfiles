@@ -4,5 +4,6 @@
 /atom/packages/
 /atom/storage/
 /atom/nohup.out
+/atom/recovery/
 
 .DS_Store
