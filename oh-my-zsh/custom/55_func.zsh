@@ -144,7 +144,7 @@ elif [[ `uname` == "Linux" ]]; then
         fi
 
         if [ -z "$(mount | grep tomnorman_ca)" ]; then
-            curlftpfs tomnorman-ca3 /mnt/tomnorman_ca
+            curlftpfs tomnorman-ca /mnt/tomnorman_ca
             if [ ! "$1" = "-q" ]; then
                  echo "mounted tomnorman.ca at /mnt/tomnorman_ca/"
             fi
