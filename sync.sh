@@ -37,3 +37,5 @@ rm -rf fonts
 #get neofetch latest
 #https://github.com/dylanaraps/neofetch/archive/3.3.0.tar.gz
 #then sudo make install
+
+#if mac brew install watch
