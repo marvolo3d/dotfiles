@@ -88,7 +88,7 @@ elif [[ `uname` == 'Linux' ]]; then
         export VRAY_VFB_OCIO=1 #on
 
 	# initialize houdini env
-	if [ -d "/opt/fs" ]; then
+	if [ -d "/opt/hfs" ]; then
 		cd /opt/hfs/
 		. ./houdini_setup &> /dev/null
 		cd ~
