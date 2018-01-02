@@ -10,6 +10,8 @@ alias lm="ls -lh -sort"
 alias mmv='noglob zmv -W' #no need for '' with zmv
 # mmv *.c.orig orig/*.
 
+alias dl="cd ~/Downloads"
+
 alias removeExtensions="for x in *;do mv $x ${x%*.*};done"
 
 if [[ `uname` == 'Darwin' ]]; then
