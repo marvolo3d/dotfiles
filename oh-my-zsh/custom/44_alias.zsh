@@ -32,8 +32,10 @@ elif [[ `uname` == 'Linux' ]]; then
         alias nuke="/opt/nuke/Nuke* &"
         alias maya="/usr/autodesk/maya2018/bin/maya2018 -nosplash &"
         alias mayapy="/usr/autodesk/maya2018/bin/mayapy"
+
     fi
 
+    alias open="dolphin . > /dev/null 2>&1 &!"
     alias gpuwatch="watch -n 1 nvidia-smi"
     alias mhz="watch -n1 'cat /proc/cpuinfo | grep -i mhz'"
 fi
