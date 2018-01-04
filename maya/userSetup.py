@@ -2,12 +2,12 @@ import os
 import sys
 import pymel.core as pm
 
-# # sublime commandport
-# try:
-#     pm.commandPort(n=":7002", stp='python')
-#     print 'commandport to sublime open...'
-# except:
-#     print 'could not open port to sublime'
+# sublime commandport
+try: 
+    pm.commandPort(name=":7005", sourceType="python")
+    print 'commandport to atom open...'
+except:
+    print 'could not open port to atom'
 
 if not pm.about(batch=1): #gui mode only
     # append python path
