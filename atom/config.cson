@@ -13,6 +13,7 @@
     titleBar: "custom"
   editor:
     fontFamily: "Inconsolata-g for Powerline"
+    fontSize: 13
     tabLength: 4
   "exception-reporting":
     userId: "b87a80b3-b72e-4ac2-9294-a674673c997f"
