@@ -55,6 +55,8 @@ elif [[ `uname` == 'Linux' ]]; then
         export NUKE_DISK_CACHE="/var/tmp/nuke/viewer"
         export NUKE_DISK_CACHE_GB=2
 
+        # maya path
+        export PATH=$PATH:/usr/autodesk/maya2018/bin
         # mari
         # export MARI_COLORSPACE_USER_INTERFACE_MODE=2 #advanced color space options
         # export MARI_SCRIPT_PATH= <list of mari script paths>
