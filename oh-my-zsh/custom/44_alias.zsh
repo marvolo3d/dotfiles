@@ -6,6 +6,7 @@ alias lh="ls -lh"
 alias la="ls -a"
 alias ll="ls -l"
 alias lm="ls -lh -sort"
+alias cdl="cd $1; lm"
 
 alias mmv='noglob zmv -W' #no need for '' with zmv
 # mmv *.c.orig orig/*.
