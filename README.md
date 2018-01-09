@@ -59,6 +59,10 @@ http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repositor
     grep -rl "string_to_find" <path> | xargs sed -i 's/string_to_find/replacement_string/g'
     ```
 
+#### btrfs
+* use [compsize](https://github.com/kilobyte/compsize) to get individual file/dir sizes `sudo compsize /home`
+* `sudo btrfs fi usage <mountpoint>` to get total btrfs filesystem usage at mountpoint
+
 #### file management
 
 * recursively find and delete all files with `<substring>` in their name
