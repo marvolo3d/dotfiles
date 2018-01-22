@@ -34,3 +34,5 @@
 
 'atom-workspace':
     'ctrl-alt-m': 'maya:run'
+'body':
+    'shift-delete': 'unset!'
