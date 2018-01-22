@@ -3,17 +3,22 @@
     general:
       _analyticsUserId: "e1e606c9-7d7a-4224-8899-f80c71ab7d86"
   "atom-ide-ui":
+    "atom-ide-diagnostics-ui": {}
     use: {}
   core:
     autoHideMenuBar: true
     disabledPackages: [
       "markdown-scroll-sync"
+      "atom-ide-ui"
     ]
+    customFileTypes:
+      'source.css': [
+        'qss'
+      ]
     telemetryConsent: "limited"
     titleBar: "custom"
   editor:
     fontFamily: "Inconsolata-g for Powerline"
-    fontSize: 13
     tabLength: 4
   "exception-reporting":
     userId: "b87a80b3-b72e-4ac2-9294-a674673c997f"
