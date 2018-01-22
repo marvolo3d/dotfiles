@@ -7,9 +7,10 @@ alias la="ls -a"
 alias ll="ls -l"
 alias lm="ls -lh -sort"
 alias cdl="cd $1; lm"
+alias rf="rm -rf"
 
-alias mmv='noglob zmv -W' #no need for '' with zmv
-# mmv *.c.orig orig/*.
+alias mmv='noglob zmv -W' # no need for '' with zmv
+# usage: mmv *.c.orig orig/*.
 
 alias dl="cd ~/Downloads"
 
@@ -40,7 +41,7 @@ elif [[ `uname` == 'Linux' ]]; then
 
     fi
 
-    alias open="dolphin . > /dev/null 2>&1 &!"
+    alias open="xdg-open"
     alias gpuwatch="watch -n 1 nvidia-smi"
     alias mhz="watch -n1 'cat /proc/cpuinfo | grep -i mhz'"
 fi
