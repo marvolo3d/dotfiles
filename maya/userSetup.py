@@ -19,3 +19,9 @@ if not pm.about(batch=1): #gui mode only
 sys.path.append("/usr/lib/python2.7/site-packages/")
 
 print "marvolo userSetup finish"
+
+# -------------------------
+# load geowizard on startup
+# -------------------------
+import maya.cmds as cmds
+cmds.evalDeferred(import geowizard)
