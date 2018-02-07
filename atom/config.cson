@@ -7,14 +7,14 @@
     use: {}
   core:
     autoHideMenuBar: true
+    customFileTypes:
+      "source.css": [
+        "qss"
+      ]
     disabledPackages: [
       "markdown-scroll-sync"
       "atom-ide-ui"
     ]
-    customFileTypes:
-      'source.css': [
-        'qss'
-      ]
     telemetryConsent: "limited"
     titleBar: "custom"
   editor:
