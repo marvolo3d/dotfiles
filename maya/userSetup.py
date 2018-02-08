@@ -24,4 +24,4 @@ print "marvolo userSetup finish"
 # load geowizard on startup
 # -------------------------
 import maya.cmds as cmds
-cmds.evalDeferred(import geowizard)
+cmds.evalDeferred("import geowizard")

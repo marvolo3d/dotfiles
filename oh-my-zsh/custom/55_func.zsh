@@ -20,29 +20,21 @@ elif [[ `uname` == "Linux" ]]; then
         paplay $NPATH &!
     }
 
-    function update_firefox {
-        wget -qO - "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US" | sudo tar xjf - -C /opt
-
-        echo "firefox updated succesfully"
-
-        mario_notify
-    }
-
-    function sound_fix {
-        killall pulseaudio
-        killall spotify
-        killall plasmashell
-
-        xrandr --output DP-2 --off
-        xrandr --output DP-2 --auto
-        xrandr --output DP-2 --left-of HDMI-0
-
-        kstart plasmashell > /dev/null 2>&1
-
-        sleep 3
-
-        spotify > /dev/null 2>&1 &
-    }
+    # function sound_fix {
+    #     killall pulseaudio
+    #     killall spotify
+    #     killall plasmashell
+    #
+    #     xrandr --output DP-2 --off
+    #     xrandr --output DP-2 --auto
+    #     xrandr --output DP-2 --left-of HDMI-0
+    #
+    #     kstart plasmashell > /dev/null 2>&1
+    #
+    #     sleep 3
+    #
+    #     spotify > /dev/null 2>&1 &
+    # }
 
     function vray_check {
         echo
@@ -155,6 +147,8 @@ elif [[ `uname` == "Linux" ]]; then
         fi
     }
 
+
+
 fi
 
 # -----------
@@ -220,4 +214,8 @@ function x264_encode {
 
 function reloadFunc {
     . ~/.oh-my-zsh/custom/55_func.zsh
+}
+
+function mkbk {
+    cp -r "$1" "$1_bak"
 }
