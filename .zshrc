@@ -9,6 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
 SPACESHIP_BATTERY_SHOW="false"
+SPACESHIP_DIR_TRUNC=0
 # SPACESHIP_GIT_BRANCH_SHOW="false"
 
 # Set list of themes to load
@@ -63,6 +64,13 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   zsh-autosuggestions
+  extract
+  cp
+  nyan
+  lol
+  history
+  web-search
+  z
 )
 
 source $ZSH/oh-my-zsh.sh
