@@ -10,6 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="spaceship"
 SPACESHIP_BATTERY_SHOW="false"
 SPACESHIP_DIR_TRUNC=0
+SPACESHIP_NODE_SHOW="false"
 # SPACESHIP_GIT_BRANCH_SHOW="false"
 
 # Set list of themes to load
