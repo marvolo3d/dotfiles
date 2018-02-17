@@ -73,9 +73,6 @@ plugins=(
   web-search
   z
   up
-  hacker-quotes
-  alias-tips
-  auto-ls
 )
 
 source $ZSH/oh-my-zsh.sh
