@@ -2,9 +2,8 @@
 # aliases
 # -------
 
-alias lh="ls -lh"
+alias ll="ls -lh"
 alias la="ls -a"
-alias ll="ls -l"
 alias lm="ls -lh -sort"
 alias cdl="cd $1; lm"
 alias rf="rm -rf"

@@ -72,6 +72,10 @@ plugins=(
   history
   web-search
   z
+  up
+  hacker-quotes
+  alias-tips
+  auto-ls
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,6 +112,9 @@ fi
 setopt extendedglob # enable extended globbing features
 
 autoload -U zmv
+
 # you don't need the following two now, but put them also in your .zshrc
 alias zcp='zmv -C'
 alias zln='zmv -L'
+
+AUTO_LS_COMMANDS=(ls)

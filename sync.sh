@@ -18,6 +18,11 @@
 
 # install custom zsh plugins
 # git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+# git clone https://github.com/peterhurford/up.zsh $ZSH_CUSTOM/plugins/up
+# git clone git@github.com:oldratlee/hacker-quotes.git $ZSH_CUSTOM/plugins/hacker-quotes
+# git clone https://github.com/djui/alias-tips.git $ZSH_CUSTOM/plugins/alias-tips
+# mkdir $ZSH_CUSTOM/plugins/auto-ls
+# curl -L https://git.io/auto-ls > $ZSH_CUSTOM/plugins/auto-ls/auto-ls.plugin.zsh
 
 # install zsh spaceship theme
 #curl -o - https://raw.githubusercontent.com/denysdovhan/spaceship-zsh-theme/master/install.zsh | zsh
