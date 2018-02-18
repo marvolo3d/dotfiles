@@ -5,7 +5,8 @@
 echo -e "\n" && neofetch && echo -e "\n"
 
 export DUNGEON="$HOME/dungeon"
-export OCIO="$DUNGEON/ocio/spi-anim/config.ocio"
+# export OCIO="$DUNGEON/ocio/spi-anim/config.ocio"
+export OCIO="$DUNGEON/ocio/aces_1.0.3/config.ocio"
 # export PROJECTS="$HOME/projects"
 
 if [[ `uname` == 'Darwin' ]]; then
