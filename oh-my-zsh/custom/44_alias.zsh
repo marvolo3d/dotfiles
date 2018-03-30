@@ -24,6 +24,11 @@ if [[ `uname` == 'Darwin' ]]; then
     alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
     alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
     alias nuke="/Applications/Nuke.app/Contents/MacOS/Nuke*"
+    alias dmgmount="hdiutil attach"
+    alias dmgumount="hdiutil detach"
+    alias maya="open -a maya"
+    alias zbrush="open -a zbrush"
+    alias nvidiaupdate="bash <(curl -s https://raw.githubusercontent.com/Benjamin-Dobell/nvidia-update/master/nvidia-update.sh)"
 
 elif [[ `uname` == 'Linux' ]]; then
 
