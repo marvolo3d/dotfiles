@@ -48,9 +48,10 @@ elif [[ `uname` == 'Linux' ]]; then
 
         # nuke
         TNT_NUKE_ICONS="$DUNGEON/nuke/scripts/tnt_nuke/icons"
-        CRYPTOMATTE_ICONS="$DUNGEON/nuke/scripts/third_party/icons"
+        CRYPTOMATTE="$DUNGEON/nuke/plugins/Cryptomatte"
         PGBOKEH="$DUNGEON/nuke/plugins/pgBokeh"
-        export NUKE_PATH=$TNT_NUKE_ICONS:$CRYPTOMATTE_ICONS:$PGBOKEH
+        VDENOISE_NUKE="$DUNGEON/nuke/plugins/VRayDenoiser"
+        export NUKE_PATH=$TNT_NUKE_ICONS:$CRYPTOMATTE:$PGBOKEH:$VDENOISE_NUKE
 
         export NUKE_TEMP_DIR="/var/tmp/nuke"
         export NUKE_DISK_CACHE="/var/tmp/nuke/viewer"
@@ -78,7 +79,7 @@ elif [[ `uname` == 'Linux' ]]; then
         # export MAYA_CUSTOM_TEMPLATE_PATH=$ALSHADERS_INSTALL/aexml
 
         # redshift ONLY SETTING FOR HOUDINI. these are taken care of for maya with the .mod
-        export REDSHIFT_COREDATAPATH="/opt/redshift" #_experimental"
+        export REDSHIFT_COREDATAPATH="/opt/redshift_experimental"
         export REDSHIFT_LOCALDATAPATH="$HOME/redshift"
         export REDSHIFT_PREFSPATH="$HOME/redshift/preferences.xml"
         export REDSHIFT_LICENSEPATH="$HOME/redshift"

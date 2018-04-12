@@ -41,7 +41,7 @@ elif [[ `uname` == 'Linux' ]]; then
         alias rv="/opt/rv/bin/rv"
         alias mari="/opt/mari/mari &"
         alias nuke="/opt/nuke/Nuke* &"
-        alias maya="/usr/autodesk/maya2018/bin/maya2018 -nosplash &"
+        alias maya="export LD_LIBRARY_PATH=$REDSHIFT_COREDATAPATH/bin && /usr/autodesk/maya2018/bin/maya2018 -nosplash &"
         alias mayapy="/usr/autodesk/maya2018/bin/mayapy"
 
     fi
