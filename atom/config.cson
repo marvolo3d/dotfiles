@@ -12,26 +12,42 @@
         "qss"
       ]
     disabledPackages: [
-      "markdown-scroll-sync"
-      "atom-ide-ui"
+      "Maya"
+      "markdown-preview"
     ]
-    telemetryConsent: "limited"
+    telemetryConsent: "no"
     titleBar: "custom"
   editor:
-    fontFamily: "Inconsolata-g for Powerline"
-    preferredLineLength: 100
+    fontFamily: "Roboto Mono Medium for Powerline"
+    fontSize: 15
+    preferredLineLength: 80
+    showIndentGuide: true
     tabLength: 4
   "exception-reporting":
     userId: "b87a80b3-b72e-4ac2-9294-a674673c997f"
   "ide-python":
+    pylsPath: "/usr/bin/pyls"
     pylsPlugins:
-      mccabe:
-        enabled: false
-      pydocstyle:
+      mccabe: {}
+      pycodestyle: {}
+      pydocstyle: {}
+      rope_completion:
         enabled: true
+    ropeFolder: "null"
+  "linter-pycodestyle":
+    executablePath: "/usr/bin/pycodestyle"
   "linter-ui-default":
     panelHeight: 300
+  "markdown-preview-plus":
+    mathConfig:
+      enableLatexRenderingByDefault: true
+    syncConfig:
+      syncEditorOnPreviewScroll: true
+      syncPreviewOnChange: true
+      syncPreviewOnEditorScroll: true
   minimap:
+    absoluteMode: true
+    adjustAbsoluteModeHeight: true
     plugins:
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0

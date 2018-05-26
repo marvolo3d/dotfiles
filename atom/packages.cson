@@ -9,11 +9,10 @@ packages: [
   "ide-python"
   "language-vex"
   "markdown-preview-plus"
-  "markdown-scroll-sync"
   "Maya"
   "minimap"
   "minimap-highlight-selected"
   "package-sync"
-  "platformio-ide-terminal"
+  "python-indent"
   "split-diff"
 ]
