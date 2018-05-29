@@ -212,6 +212,26 @@ function x264_encode {
     fi
 }
 
+function x264_encode60 {
+    filename="$1"
+    filename="${filename%.*}"
+
+    if [ -z "$2" ]; then
+        framerate=60
+    else
+        framerate=$2
+    fi
+
+    echo -e "encoding ${filename} at ${framerate} fps"
+
+    # ffmpeg -i "$1" -r $framerate -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p "${filename}_x264.mp4"
+    ffmpeg -i "$1" -r $framerate -c:v libx264 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -preset veryslow -crf 12 -pix_fmt yuv420p "${filename}_x264.mp4"
+
+    if [[ `uname` == 'Linux' ]]; then
+        mario_notify
+    fi
+}
+
 function reloadFunc {
     . ~/.oh-my-zsh/custom/55_func.zsh
 }
