@@ -44,3 +44,9 @@ rm -rf fonts
 #then sudo make install
 
 #if mac brew install watch
+
+# install tmux plugin manager
+# install tmux ressurect
+# install tmux continuum
+# install .tmux config
+
