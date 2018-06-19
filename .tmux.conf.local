@@ -270,17 +270,24 @@ set -g mouse on
 set-option -g default-command /bin/zsh
 
 # List of plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
+#set -g @plugin 'tmux-plugins/tpm'
+#set -g @plugin 'tmux-plugins/tmux-sensible'
+#set -g @plugin 'tmux-plugins/tmux-resurrect'
+#set -g @plugin 'tmux-plugins/tmux-continuum'
+
+set -g @tpm_plugins '           \
+   tmux-plugins/tpm             \
+   tmux-plugins/tmux-sensible   \
+   tmux-plugins/tmux-resurrect  \
+   tmux-plugins/tmux-continuum  \
+'
 
 # set -g @resurrect-save 'S'
 # set -g @resurrect-restore 'R'
 
-#set -g @resurrect-capture-pane-contents 'on'
-#set -g @resurrect-dir '$HOME/.tmux-resurrect'
-#set -g @continuum-restore 'on'
+set -g @resurrect-capture-pane-contents 'on'
+set -g @resurrect-dir '$HOME/.tmux-resurrect'
+set -g @continuum-restore 'on'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
