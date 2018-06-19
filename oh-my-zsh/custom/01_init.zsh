@@ -73,10 +73,10 @@ elif [[ `uname` == 'Linux' ]]; then
         # export PATH=$PATH:/opt/solidangle/mtoa/2017/bin #for maketx
 
         # al shaders
-        # export ALSHADERS_INSTALL="/opt/alShaders"
-        # export ARNOLD_PLUGIN_PATH=$ALSHADERS_INSTALL/bin
-        # export MTOA_TEMPLATES_PATH=$ALSHADERS_INSTALL/ae
-        # export MAYA_CUSTOM_TEMPLATE_PATH=$ALSHADERS_INSTALL/aexml
+        export ALSHADERS_INSTALL="/opt/alShaders"
+        export ARNOLD_PLUGIN_PATH=$ALSHADERS_INSTALL/bin
+        export MTOA_TEMPLATES_PATH=$ALSHADERS_INSTALL/ae
+        export MAYA_CUSTOM_TEMPLATE_PATH=$ALSHADERS_INSTALL/aexml
 
         # redshift ONLY SETTING FOR HOUDINI. these are taken care of for maya with the .mod
         export REDSHIFT_COREDATAPATH="/opt/redshift_experimental"
