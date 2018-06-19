@@ -2,7 +2,7 @@
 # envset + other init
 # -------------------
 
-echo -e "\n" && neofetch && echo -e "\n"
+#echo -e "\n" && neofetch && echo -e "\n"
 
 export DUNGEON="$HOME/dungeon"
 # export OCIO="$DUNGEON/ocio/spi-anim/config.ocio"
