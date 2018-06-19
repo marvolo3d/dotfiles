@@ -44,6 +44,7 @@ elif [[ `uname` == "Linux" ]]; then
 
         macpro="$(vraydr_check -host=macpro.local -port=20207 2>&1)"
         xeon="$(vraydr_check -host=xeon-ws.local -port=20207 2>&1)"
+	supermicro="$(vraydr_check -host=supermicro.local -port=20207 2>&1)"
 
         if [ -z "$(echo $macpro | grep -i ready)" ]; then
             macpro_result="\e[38;5;160mfailed: \e[38;5;244m$macpro"
@@ -56,10 +57,17 @@ elif [[ `uname` == "Linux" ]]; then
         else
             xeon_result="\e[38;5;76mready!\e[38;5;244m"
         fi
+	
+	if [ -z "$(echo $supermicro | grep -i ready)" ]; then
+	    supermicro_result="\e[38;5;160mfailed: \e[38;5;244m$macpro"
+	else
+	    supermicro_result="\e[38;5;76mready!\e[35;5;244m"
+	fi
 
         echo -e "\e[38;5;208mmacpro\e[38;5;244m  | $macpro_result "
         echo -e "\e[38;5;208mxeon-ws\e[38;5;244m | $xeon_result "
-        echo
+        echo -e "\e[38;5;208msupermicro\e[38;5;244m | $supermicro_result "
+	echo
         echo
     }
 
@@ -230,6 +238,16 @@ function x264_encode60 {
     if [[ `uname` == 'Linux' ]]; then
         mario_notify
     fi
+}
+
+function loopvid {
+    filename="$1"
+    outname="${filename%.*}"
+    count="$2"
+    echo $filename
+    for i in {1..$count}; do printf "file '%s'\n" $filename >> looplisttemp; done
+    ffmpeg -f concat -i looplisttemp -c copy "${outname}_loop.mp4"
+    rm looplisttemp
 }
 
 function reloadFunc {
