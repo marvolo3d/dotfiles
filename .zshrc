@@ -115,3 +115,6 @@ alias zcp='zmv -C'
 alias zln='zmv -L'
 
 AUTO_LS_COMMANDS=(ls)
+
+# run command passed when zsh starts
+eval "$RUN"
