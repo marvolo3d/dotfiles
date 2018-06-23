@@ -163,6 +163,11 @@ fi
 # os agnostic
 # -----------
 
+function substance2tiledexr_slave {
+    sshxeon -t "cd $PWD; RUN='substance2tiledexr $@' zsh"
+}
+
+
 function pad_files {
     num=`expr match "$1" '[^0-9]*\([0-9]\+\).*'`
     paddednum=`printf "%03d" $num`
