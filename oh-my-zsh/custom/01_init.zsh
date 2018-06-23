@@ -90,6 +90,7 @@ elif [[ `uname` == 'Linux' ]]; then
         #export VRAY_VFB_SRGB=1 #on
         #export VRAY_VFB_OCIO=2 #off
         export VRAY_VFB_OCIO=1 #on
+	export VRAY_OPENCL_PLATFORMS_x64="c++/cpu;nvidia cuda titan x (pascal) gpu index0;"
 
 	# initialize houdini env
 	if [ -d "/opt/hfs" ]; then
