@@ -6,7 +6,6 @@
     "atom-ide-diagnostics-ui": {}
     use: {}
   core:
-    autoHideMenuBar: true
     customFileTypes:
       "source.css": [
         "qss"
