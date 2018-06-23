@@ -290,5 +290,8 @@ set -g @resurrect-capture-pane-contents 'on'
 set -g @resurrect-dir '$HOME/.tmux-resurrect'
 set -g @continuum-restore 'on'
 
+# preserve tab names
+set-option -g allow-rename off
+
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
