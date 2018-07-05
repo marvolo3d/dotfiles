@@ -245,6 +245,10 @@ function x264_encode60 {
     fi
 }
 
+function x264_encode_slave {
+    sshxeon -t "cd $PWD;'RUN=x264_encode $@' zsh"
+}
+
 function loopvid {
     filename="$1"
     outname="${filename%.*}"
