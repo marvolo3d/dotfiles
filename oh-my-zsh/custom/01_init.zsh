@@ -70,7 +70,7 @@ elif [[ `uname` == 'Linux' ]]; then
         # export PATH=$PATH:$RMANTREE/bin #:/usr/ChaosGroup/V-Ray/Maya2017-x64/bin
 
         # arnold
-        # export PATH=$PATH:/opt/solidangle/mtoa/2017/bin #for maketx
+        export PATH=$PATH:/opt/solidangle/mtoa/2018/bin #for maketx, kick
 
         # al shaders
         export ALSHADERS_INSTALL="/opt/alShaders"
