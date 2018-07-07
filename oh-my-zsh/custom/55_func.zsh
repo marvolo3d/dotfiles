@@ -127,6 +127,7 @@ fi
 
 function substance2tiledexr_slave {
     sshxeon -t "cd $PWD; RUN='substance2tiledexr $@' zsh"
+    mario_notify
 }
 
 function pad_files {
@@ -218,6 +219,7 @@ function loopvid {
     for i in {1..$count}; do printf "file '%s'\n" $filename >> looplisttemp; done
     ffmpeg -f concat -i looplisttemp -c copy "${outname}_loop.mp4"
     rm looplisttemp
+    mario_notify
 }
 
 function reloadFunc {
