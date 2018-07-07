@@ -12,7 +12,6 @@ export OCIO="$DUNGEON/ocio/aces_1.0.3/config.ocio"
 if [[ `uname` == 'Darwin' ]]; then
 
     export PATH=$PATH:~/bin:/Applications/ChaosGroup/V-Ray/Maya2018/bin:/Applications/Autodesk/maya2018/Maya.app/Contents/bin
-    # source /Users/Shared/rlm/rlmenvset.sh
 
     # set env for apps launched via launchpad, spotlight, and dock
     launchctl setenv LIBRARY $DUNGEON
@@ -59,7 +58,8 @@ elif [[ `uname` == 'Linux' ]]; then
 
         # maya path
         export PATH=$PATH:/usr/autodesk/maya2018/bin
-        # mari
+
+	# mari
         # export MARI_COLORSPACE_USER_INTERFACE_MODE=2 #advanced color space options
         # export MARI_SCRIPT_PATH= <list of mari script paths>
 
@@ -70,7 +70,7 @@ elif [[ `uname` == 'Linux' ]]; then
         # export PATH=$PATH:$RMANTREE/bin #:/usr/ChaosGroup/V-Ray/Maya2017-x64/bin
 
         # arnold
-        export PATH=$PATH:/opt/solidangle/mtoa/2018/bin #for maketx, kick
+        export PATH=$PATH:/opt/solidangle/mtoa/2018/bin #for maketx, kick, noice
 
         # al shaders
         export ALSHADERS_INSTALL="/opt/alShaders"
