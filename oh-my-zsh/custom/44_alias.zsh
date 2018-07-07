@@ -45,7 +45,8 @@ elif [[ `uname` == 'Linux' ]]; then
         alias maya="export LD_LIBRARY_PATH=$REDSHIFT_COREDATAPATH/bin && /usr/autodesk/maya2018/bin/maya2018 -nosplash &"
         alias maya2019="/usr/autodesk/maya2019/bin/maya2019 &"
         alias mayapy="/usr/autodesk/maya2018/bin/mayapy"
-
+	
+	alias yaourt="echo RIP yaourt. use yay"
     fi
 
     alias open="xdg-open"
