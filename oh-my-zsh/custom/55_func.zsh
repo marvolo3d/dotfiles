@@ -20,22 +20,6 @@ elif [[ `uname` == "Linux" ]]; then
         paplay $NPATH &!
     }
 
-    # function sound_fix {
-    #     killall pulseaudio
-    #     killall spotify
-    #     killall plasmashell
-    #
-    #     xrandr --output DP-2 --off
-    #     xrandr --output DP-2 --auto
-    #     xrandr --output DP-2 --left-of HDMI-0
-    #
-    #     kstart plasmashell > /dev/null 2>&1
-    #
-    #     sleep 3
-    #
-    #     spotify > /dev/null 2>&1 &
-    # }
-
     function vray_check {
         echo
         echo
@@ -57,7 +41,7 @@ elif [[ `uname` == "Linux" ]]; then
         else
             xeon_result="\e[38;5;76mready!\e[38;5;244m"
         fi
-	
+
 	if [ -z "$(echo $supermicro | grep -i ready)" ]; then
 	    supermicro_result="\e[38;5;160mfailed: \e[38;5;244m$macpro"
 	else
@@ -76,8 +60,6 @@ elif [[ `uname` == "Linux" ]]; then
     }
 
     function tn_transfer {
-        # mount site
-        mftp -q
 
         if [ "$1" = "-r" ]; then
             random=1
@@ -88,7 +70,6 @@ elif [[ `uname` == "Linux" ]]; then
         fi
 
         filename="$(basename $infile)"
-        targetdir="/mnt/tomnorman_ca/the_abyss/"
 
         if [ $random = 1 ]; then
             pass=0
@@ -109,16 +90,18 @@ elif [[ `uname` == "Linux" ]]; then
                 # noun="${nounrand[$rand]}"
                 filename="${adj}${(C)noun}.${extension}"
 
-                if [ ! -f "$targetdir$filename" ]; then
-                    pass=1
+                isFound=$(ssh tomnorma@tomnorman.ca test -f "public_html/the_abyss/${filename}" && echo 0 || echo 1)
+                if [ $isFound -eq 1 ]; then
+                     pass=1
                 fi
             done
 
         fi
 
-        cp "$infile" $targetdir/$filename
+        scp "$infile" "tomnorma@tomnorman.ca:public_html/the_abyss/${filename}"
 
-        chmod 655 "$targetdir/$filename"
+        # set permissions public
+        ssh tomnorma@tomnorman.ca chmod 655 "public_html/the_abyss/${filename}"
 
         result="http://tomnorman.ca/the_abyss/${filename}"
 
@@ -136,27 +119,6 @@ elif [[ `uname` == "Linux" ]]; then
         mario_notify
     } #vray vdenoise
 
-    function mftp {
-        # -q flag is quiet
-        if [ ! -e "$HOME/.netrc" ]; then
-            echo "ERROR: no .netrc for ftp credentials - aborting FTP mounts"
-            return 1
-        fi
-
-        if [ -z "$(mount | grep tomnorman_ca)" ]; then
-            curlftpfs tomnorman-ca /mnt/tomnorman_ca
-            if [ ! "$1" = "-q" ]; then
-                 echo "mounted tomnorman.ca at /mnt/tomnorman_ca/"
-            fi
-        else
-            if [ ! "$1" = "-q" ]; then
-                 echo "tomnorman.ca already mounted at /mnt/tomnorman_ca/"
-            fi
-        fi
-    }
-
-
-
 fi
 
 # -----------
@@ -166,7 +128,6 @@ fi
 function substance2tiledexr_slave {
     sshxeon -t "cd $PWD; RUN='substance2tiledexr $@' zsh"
 }
-
 
 function pad_files {
     num=`expr match "$1" '[^0-9]*\([0-9]\+\).*'`
@@ -246,7 +207,7 @@ function x264_encode60 {
 }
 
 function x264_encode_slave {
-    sshxeon -t "cd $PWD;'RUN=x264_encode $@' zsh"
+    sshxeon -t "cd $PWD; RUN='x264_encode $@' zsh"
 }
 
 function loopvid {
