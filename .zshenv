@@ -2,12 +2,8 @@
 # envset + other init
 # -------------------
 
-#echo -e "\n" && neofetch && echo -e "\n"
-
 export DUNGEON="$HOME/dungeon"
-# export OCIO="$DUNGEON/ocio/spi-anim/config.ocio"
 export OCIO="$DUNGEON/ocio/aces_1.0.3/config.ocio"
-# export PROJECTS="$HOME/projects"
 
 if [[ `uname` == 'Darwin' ]]; then
 
@@ -20,9 +16,10 @@ if [[ `uname` == 'Darwin' ]]; then
 
     # houdini config
     if [ -d "/Applications/Houdini/Current/Frameworks/Houdini.framework/Versions/Current/Resources/" ]; then
+        dir=$PWD
         cd /Applications/Houdini/Current/Frameworks/Houdini.framework/Versions/Current/Resources/
         . ./houdini_setup
-        cd
+        cd dir
     fi
 
 elif [[ `uname` == 'Linux' ]]; then
@@ -56,10 +53,10 @@ elif [[ `uname` == 'Linux' ]]; then
         export NUKE_DISK_CACHE="/var/tmp/nuke/viewer"
         export NUKE_DISK_CACHE_GB=2
 
-        # maya path
+        # maya path (Render, mayapy)
         export PATH=$PATH:/usr/autodesk/maya2018/bin
 
-	# mari
+	    # mari
         # export MARI_COLORSPACE_USER_INTERFACE_MODE=2 #advanced color space options
         # export MARI_SCRIPT_PATH= <list of mari script paths>
 
@@ -72,13 +69,13 @@ elif [[ `uname` == 'Linux' ]]; then
         # arnold
         export PATH=$PATH:/opt/solidangle/mtoa/2018/bin #for maketx, kick, noice
 
-        # al shaders
+        # al shaders (cryptomatte)
         export ALSHADERS_INSTALL="/opt/alShaders"
         export ARNOLD_PLUGIN_PATH=$ALSHADERS_INSTALL/bin
         export MTOA_TEMPLATES_PATH=$ALSHADERS_INSTALL/ae
         export MAYA_CUSTOM_TEMPLATE_PATH=$ALSHADERS_INSTALL/aexml
 
-        # redshift ONLY SETTING FOR HOUDINI. these are taken care of for maya with the .mod
+        # redshift for houdini. these are taken care of for maya with the .mod
         export REDSHIFT_COREDATAPATH="/opt/redshift_experimental"
         export REDSHIFT_LOCALDATAPATH="$HOME/redshift"
         export REDSHIFT_PREFSPATH="$HOME/redshift/preferences.xml"
@@ -94,9 +91,10 @@ elif [[ `uname` == 'Linux' ]]; then
 
 	# initialize houdini env
 	if [ -d "/opt/hfs" ]; then
+        dir=$PWD
 		cd /opt/hfs/
 		. ./houdini_setup &> /dev/null
-		cd ~
+		cd $dir
 	fi
 
     fi
