@@ -103,7 +103,7 @@ elif [[ `uname` == "Linux" ]]; then
         # set permissions public
         ssh tomnorma@tomnorman.ca chmod 655 "public_html/the_abyss/${filename}"
 
-        result="http://tomnorman.ca/the_abyss/${filename}"
+        result="http://tomnorman.xyz/the_abyss/${filename}"
 
         echo $result #to stdout
         echo -n "$result" | xclip -selection clipboard #copy link to clipboard
