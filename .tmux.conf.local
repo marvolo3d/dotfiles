@@ -162,7 +162,7 @@ tmux_conf_theme_status_right='#{prefix}#{pairing} #{?battery_status, #{battery_s
 
 # status left style
 tmux_conf_theme_status_left_fg='#000000,#e4e4e4,#e4e4e4'  # black, white , white
-tmux_conf_theme_status_left_bg='#ffff00,#169627,#00afff'  # yellow, pink, white blue
+tmux_conf_theme_status_left_bg='#ffff00,#169627,#00afff'  # yellow, green, white blue
 tmux_conf_theme_status_left_attr='bold,none,none'
 
 # status right style
@@ -239,7 +239,7 @@ tmux_conf_theme_clock_style='24'
 #   - false (default)
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
-tmux_conf_copy_to_os_clipboard=false
+tmux_conf_copy_to_os_clipboard=true
 
 
 # -- user customizations -------------------------------------------------------
@@ -269,22 +269,14 @@ set -g mouse on
 # zshell default
 set-option -g default-command /bin/zsh
 
-# List of plugins
-#set -g @plugin 'tmux-plugins/tpm'
-#set -g @plugin 'tmux-plugins/tmux-sensible'
-#set -g @plugin 'tmux-plugins/tmux-resurrect'
-#set -g @plugin 'tmux-plugins/tmux-continuum'
-
+# load plugins
 set -g @tpm_plugins '           \
-   tmux-plugins/tpm             \
-   tmux-plugins/tmux-sensible   \
-   tmux-plugins/tmux-resurrect  \
-   tmux-plugins/tmux-continuum  \
-   tmux-plugins/tmux-yank       \
+    tmux-plugins/tpm             \
+    tmux-plugins/tmux-resurrect  \
+    tmux-plugins/tmux-sensible   \
+    tmux-plugins/tmux-continuum  \
+    tmux-plugins/tmux-yank       \
 '
-
-# set -g @resurrect-save 'S'
-# set -g @resurrect-restore 'R'
 
 # set -g @resurrect-capture-pane-contents 'on'
 set -g @resurrect-dir '$HOME/.tmux-resurrect'
