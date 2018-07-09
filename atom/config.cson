@@ -5,13 +5,19 @@
   "atom-ide-ui":
     "atom-ide-diagnostics-ui": {}
     use: {}
+  "autocomplete-python":
+    extraPaths: "/home/tom.norman/dungeon/maya/devkitBase/devkit/other/pymel/extras/completion/py"
+    outputProviderErrors: true
+    pythonPaths: "/net/software/autodesk/maya/bin/mayapy;/usr/bin/python"
+    useKite: false
+    useSnippets: "all"
   core:
+    autoHideMenuBar: true
     customFileTypes:
       "source.css": [
         "qss"
       ]
     disabledPackages: [
-      "Maya"
       "markdown-preview"
     ]
     telemetryConsent: "no"
@@ -26,6 +32,8 @@
     userId: "b87a80b3-b72e-4ac2-9294-a674673c997f"
   "ide-python":
     pylsPlugins:
+      jedi_completion:
+        enabled: false
       mccabe: {}
       pycodestyle: {}
       pydocstyle: {}
