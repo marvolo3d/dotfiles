@@ -61,12 +61,12 @@ elif [[ `uname` == 'Linux' ]]; then
         # export MARI_SCRIPT_PATH= <list of mari script paths>
 
         # renderman
-        # export RMSTREE=/opt/pixar/RenderManForMaya-21.3-maya2017
-        # export RMANTREE=/opt/pixar/RenderManProServer-21.3
-        # export MAYA_RENDER_DESC_PATH=$RMSTREE/etc/rmanRenderer.xml #for command line renders
-        # export PATH=$PATH:$RMANTREE/bin #:/usr/ChaosGroup/V-Ray/Maya2017-x64/bin
-
-        # arnold
+        export RMSTREE=/opt/pixar/RenderManForMaya-21.7-maya2018
+        export RMANTREE=/opt/pixar/RenderManProServer-21.7
+        export MAYA_RENDER_DESC_PATH=$RMSTREE/etc/rmanRenderer.xml #for command line renders
+        export PATH=$PATH:$RMANTREE/bin 
+        
+	# arnold
         export PATH=$PATH:/opt/solidangle/mtoa/2018/bin #for maketx, kick, noice
 
         # al shaders (cryptomatte)
