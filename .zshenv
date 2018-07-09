@@ -9,6 +9,12 @@ if [[ `uname` == 'Darwin' ]]; then
 
     export PATH=$PATH:~/bin:/Applications/ChaosGroup/V-Ray/Maya2018/bin:/Applications/Autodesk/maya2018/Maya.app/Contents/bin
 
+    # arnold bin PATH
+    export PATH=$PATH:/Applications/solidangle/mtoa/2018/bin
+
+    # al shaders (cryptomatte)
+    export ALSHADERS_INSTALL="/Applications/alShaders"
+
     # set env for apps launched via launchpad, spotlight, and dock
     launchctl setenv LIBRARY $DUNGEON
     launchctl setenv OCIO $OCIO
@@ -71,9 +77,6 @@ elif [[ `uname` == 'Linux' ]]; then
 
         # al shaders (cryptomatte)
         export ALSHADERS_INSTALL="/opt/alShaders"
-        export ARNOLD_PLUGIN_PATH=$ALSHADERS_INSTALL/bin
-        export MTOA_TEMPLATES_PATH=$ALSHADERS_INSTALL/ae
-        export MAYA_CUSTOM_TEMPLATE_PATH=$ALSHADERS_INSTALL/aexml
 
         # redshift for houdini. these are taken care of for maya with the .mod
         export REDSHIFT_COREDATAPATH="/opt/redshift_experimental"
@@ -109,3 +112,8 @@ elif [[ `uname` == 'Linux' ]]; then
         fi
     fi
 fi
+
+# more os agnostic
+export ARNOLD_PLUGIN_PATH=$ALSHADERS_INSTALL/bin
+export MTOA_TEMPLATES_PATH=$ALSHADERS_INSTALL/ae
+export MAYA_CUSTOM_TEMPLATE_PATH=$ALSHADERS_INSTALL/aexml
