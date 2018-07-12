@@ -7,7 +7,6 @@
     use: {}
   "autocomplete-python":
     extraPaths: "/home/tom.norman/dungeon/maya/devkitBase/devkit/other/pymel/extras/completion/py"
-    outputProviderErrors: true
     pythonPaths: "/net/software/autodesk/maya/bin/mayapy;/usr/bin/python"
     useKite: false
     useSnippets: "all"
