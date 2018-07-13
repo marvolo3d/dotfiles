@@ -41,7 +41,6 @@ elif [[ `uname` == 'Linux' ]]; then
         alias rv="/opt/rv/bin/rv"
         alias mari="/opt/mari/mari &"
         alias nuke="/opt/nuke/Nuke* &"
-	    alias painter="export QT_AUTO_SCREEN_SCALE_FACTOR=0 && export QT_SCALE_FACTOR=1.2 && '/opt/Allegorithmic/Substance_Painter/Substance Painter' &"
         alias maya2019="/usr/autodesk/maya2019/bin/maya2019 &"
         alias mayapy="/usr/autodesk/maya2018/bin/mayapy"
 	
