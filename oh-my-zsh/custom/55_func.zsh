@@ -56,7 +56,7 @@ elif [[ `uname` == "Linux" ]]; then
     }
 
     function startNukeRenderServer {
-        /opt/nuke/python /opt/nuke/pythonextensions/site-packages/foundry/frameserver/nuke/runframeserver.py --numworkers=2 --nukeworkerthreads=24 --nukeworkermemory=16384 --workerconnecturl=tcp://titan-x99:5560 --nukepath/opt/nuke/Nuke11.0
+        /opt/nuke/python /opt/nuke/pythonextensions/site-packages/foundry/frameserver/nuke/runframeserver.py --numworkers=2 --nukeworkerthreads=24 --nukeworkermemory=16384 --workerconnecturl=tcp://titan-x99.local:5560 --nukepath /opt/nuke/Nuke11.1
     }
 
     function tn_transfer {
