@@ -15,10 +15,18 @@ if [[ `uname` == 'Darwin' ]]; then
     # al shaders (cryptomatte)
     export ALSHADERS_INSTALL="/Applications/alShaders"
 
+    # nuke
+    TNT_NUKE_ICONS="$DUNGEON/nuke/scripts/tnt_nuke/icons"
+    CRYPTOMATTE="$DUNGEON/nuke/plugins/Cryptomatte"
+    PGBOKEH="$DUNGEON/nuke/plugins/pgBokeh"
+    VDENOISE_NUKE="$DUNGEON/nuke/plugins/VRayDenoiser"
+    export NUKE_PATH=$TNT_NUKE_ICONS:$CRYPTOMATTE:$PGBOKEH:$VDENOISE_NUKE
+
     # set env for apps launched via launchpad, spotlight, and dock
     launchctl setenv LIBRARY $DUNGEON
     launchctl setenv OCIO $OCIO
     launchctl setenv PATH $PATH
+    launchctl setenv NUKE_PATH $NUKE_PATH
 
     # houdini config
     if [ -d "/Applications/Houdini/Current/Frameworks/Houdini.framework/Versions/Current/Resources/" ]; then
@@ -70,8 +78,8 @@ elif [[ `uname` == 'Linux' ]]; then
         export RMSTREE=/opt/pixar/RenderManForMaya-21.7-maya2018
         export RMANTREE=/opt/pixar/RenderManProServer-21.7
         export MAYA_RENDER_DESC_PATH=$RMSTREE/etc/rmanRenderer.xml #for command line renders
-        export PATH=$PATH:$RMANTREE/bin 
-        
+        export PATH=$PATH:$RMANTREE/bin
+
 	# arnold
         export PATH=$PATH:/opt/solidangle/mtoa/2018/bin #for maketx, kick, noice
 
