@@ -82,7 +82,7 @@ elif [[ `uname` == 'Linux' ]]; then
         export HOUDINI_DEFAULT_RIB_RENDERER=prman21.7
         export PATH=$RMANTREE/bin:$PATH
 
-	# arnold
+	    # arnold
         export PATH=$PATH:/opt/solidangle/mtoa/2018/bin #for maketx, kick, noice
 
         # al shaders (cryptomatte)
@@ -100,14 +100,20 @@ elif [[ `uname` == 'Linux' ]]; then
         #export VRAY_VFB_SRGB=1 #on
         #export VRAY_VFB_OCIO=2 #off
         export VRAY_VFB_OCIO=1 #on
-	export VRAY_OPENCL_PLATFORMS_x64="c++/cpu;nvidia cuda titan x (pascal) gpu index0;"
+
+	    export VRAY_OPENCL_PLATFORMS_x64="c++/cpu;nvidia cuda titan x (pascal) gpu index0;"
 
 	# initialize houdini env
 	if [ -d "/opt/hfs" ]; then
         dir=$PWD
-		cd /opt/hfs/
+
+        cd /opt/hfs/
 		. ./houdini_setup &> /dev/null
-		cd $dir
+
+        # used for loading correct redshift plugin in houdini.env
+        export HOUDINI_VERSION=$(basename $(realpath .) | sed -e 's/hfs//g')
+
+        cd $dir
 	fi
 
     fi
@@ -123,7 +129,7 @@ elif [[ `uname` == 'Linux' ]]; then
     fi
 fi
 
-# more os agnostic
+# more os agnostic (after ALSHADERS_INSTALL is set)
 export ARNOLD_PLUGIN_PATH=$ALSHADERS_INSTALL/bin
 export MTOA_TEMPLATES_PATH=$ALSHADERS_INSTALL/ae
 export MAYA_CUSTOM_TEMPLATE_PATH=$ALSHADERS_INSTALL/aexml
