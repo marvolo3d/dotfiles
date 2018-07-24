@@ -53,7 +53,7 @@ elif [[ `uname` == 'Linux' ]]; then
         # yeti
         export YETI_TMP="/var/tmp/yeti"
         export YETI_HOME="/opt/yeti"
-        export RMAN_PROCEDURALS_PATH="/opt/yeti/bin" # for renderman
+        #export RMAN_PROCEDURALS_PATH="/opt/yeti/bin" # for renderman
         export REDSHIFT_MAYAEXTENSIONSPATH="/opt/yeti/plug-ins"
 
         # nuke
@@ -70,7 +70,7 @@ elif [[ `uname` == 'Linux' ]]; then
         # maya path (Render, mayapy)
         export PATH=$PATH:/usr/autodesk/maya2018/bin
 
-	    # mari
+	# mari
         # export MARI_COLORSPACE_USER_INTERFACE_MODE=2 #advanced color space options
         # export MARI_SCRIPT_PATH= <list of mari script paths>
 
@@ -78,7 +78,9 @@ elif [[ `uname` == 'Linux' ]]; then
         export RMSTREE=/opt/pixar/RenderManForMaya-21.7-maya2018
         export RMANTREE=/opt/pixar/RenderManProServer-21.7
         export MAYA_RENDER_DESC_PATH=$RMSTREE/etc/rmanRenderer.xml #for command line renders
-        export PATH=$PATH:$RMANTREE/bin
+	export RMANFB=it # for houdini
+        export HOUDINI_DEFAULT_RIB_RENDERER=prman21.7
+        export PATH=$RMANTREE/bin:$PATH
 
 	# arnold
         export PATH=$PATH:/opt/solidangle/mtoa/2018/bin #for maketx, kick, noice
