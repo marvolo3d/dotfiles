@@ -67,13 +67,13 @@ plugins=(
   zsh-autosuggestions
   extract
   cp
-  nyan
   lol
   history
   web-search
   z
   up
 )
+# (nyan) plugin unloaded
 
 source $ZSH/oh-my-zsh.sh
 
