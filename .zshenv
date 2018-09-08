@@ -82,14 +82,14 @@ elif [[ `uname` == 'Linux' ]]; then
         export HOUDINI_DEFAULT_RIB_RENDERER=prman21.7
         export PATH=$RMANTREE/bin:$PATH
 
-	    # arnold
+	# arnold
         export PATH=$PATH:/opt/solidangle/mtoa/2018/bin #for maketx, kick, noice
 
         # al shaders (cryptomatte)
         export ALSHADERS_INSTALL="/opt/alShaders"
 
         # redshift for houdini. these are taken care of for maya with the .mod
-        export REDSHIFT_COREDATAPATH="/opt/redshift_experimental"
+        export REDSHIFT_COREDATAPATH="/opt/redshift"
         export REDSHIFT_LOCALDATAPATH="$HOME/redshift"
         export REDSHIFT_PREFSPATH="$HOME/redshift/preferences.xml"
         export REDSHIFT_LICENSEPATH="$HOME/redshift"
