@@ -7,7 +7,7 @@ export OCIO="$DUNGEON/ocio/aces_1.0.3/config.ocio"
 
 if [[ `uname` == 'Darwin' ]]; then
 
-    export PATH=$PATH:~/bin:/Applications/ChaosGroup/V-Ray/Maya2018/bin:/Applications/Autodesk/maya2018/Maya.app/Contents/bin
+    export PATH=$PATH:$HOME/bin:/Applications/ChaosGroup/V-Ray/Maya2018/bin:/Applications/Autodesk/maya2018/Maya.app/Contents/bin
 
     # arnold bin PATH
     export PATH=$PATH:/Applications/solidangle/mtoa/2018/bin
@@ -54,7 +54,7 @@ elif [[ `uname` == 'Linux' ]]; then
         export YETI_TMP="/var/tmp/yeti"
         export YETI_HOME="/opt/yeti"
         #export RMAN_PROCEDURALS_PATH="/opt/yeti/bin" # for renderman
-        export REDSHIFT_MAYAEXTENSIONSPATH="/opt/yeti/plug-ins"
+        export REDSHIFT_MAYAEXTENSIONSPATH=$REDSHIFT_MAYAEXTENSIONSPATH:/opt/yeti/plug-ins
 
         # nuke
         TNT_NUKE_ICONS="$DUNGEON/nuke/scripts/tnt_nuke/icons"
@@ -69,6 +69,7 @@ elif [[ `uname` == 'Linux' ]]; then
 
         # maya path (Render, mayapy)
         export PATH=$PATH:/usr/autodesk/maya2018/bin
+	export MAYA_MODULE_PATH=$DUNGEON/maya/modules
 
 	# mari
         # export MARI_COLORSPACE_USER_INTERFACE_MODE=2 #advanced color space options
@@ -78,7 +79,7 @@ elif [[ `uname` == 'Linux' ]]; then
         export RMSTREE=/opt/pixar/RenderManForMaya-21.7-maya2018
         export RMANTREE=/opt/pixar/RenderManProServer-21.7
         export MAYA_RENDER_DESC_PATH=$RMSTREE/etc/rmanRenderer.xml #for command line renders
-	export RMANFB=it # for houdini
+        export RMANFB=it # for houdini
         export HOUDINI_DEFAULT_RIB_RENDERER=prman21.7
         export PATH=$RMANTREE/bin:$PATH
 
@@ -100,7 +101,8 @@ elif [[ `uname` == 'Linux' ]]; then
         #export VRAY_VFB_SRGB=1 #on
         #export VRAY_VFB_OCIO=2 #off
         export VRAY_VFB_OCIO=1 #on
-
+        export VRAY_FOR_MAYA2018_PLUGINS_x64=$VRAY_FOR_MAYA2018_PLUGINS_x64:/opt/yeti/bin
+        export VRAY_PLUGINS_x64=$VRAY_PLUGINS_x64:/opt/yeti/bin
 	    export VRAY_OPENCL_PLATFORMS_x64="c++/cpu;nvidia cuda titan x (pascal) gpu index0;"
 
 	# initialize houdini env
