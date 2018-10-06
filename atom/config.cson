@@ -46,10 +46,16 @@
   "markdown-preview-plus":
     mathConfig:
       enableLatexRenderingByDefault: true
+    previewConfig:
+      activatePreviewWithEditor: true
+    saveConfig:
+      saveToPDFOptions:
+        printSelectionOnly: true
     syncConfig:
       syncEditorOnPreviewScroll: true
       syncPreviewOnChange: true
       syncPreviewOnEditorScroll: true
+    syntaxThemeName: "atom-dark-syntax"
   minimap:
     absoluteMode: true
     adjustAbsoluteModeHeight: true
