@@ -3,7 +3,10 @@
 # ---------
 
 if [[ `uname` == "Darwin" ]]; then
-    echo "none for osx" > /dev/null
+    function startNukeRenderServer {
+        NUKEPATH="/Applications/Nuke.app/Nuke11.1v4.app/Contents/MacOS/"
+        $NUKEPATH/python $NUKEPATH/pythonextensions/site-packages/foundry/frameserver/nuke/runframeserver.py --numworkers=2 --nukeworkerthreads=4 --nukeworkermemory=16384 --workerconnecturl=tcp://titan-x99.local:5560 --nukepath $NUKEPATH/Nuke11.1v4
+    }
 elif [[ `uname` == "Linux" ]]; then
 
     function supercaps {
