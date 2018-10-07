@@ -104,7 +104,10 @@ elif [[ `uname` == 'Linux' ]]; then
         export VRAY_FOR_MAYA2018_PLUGINS_x64=$VRAY_FOR_MAYA2018_PLUGINS_x64:/opt/yeti/bin
         export VRAY_PLUGINS_x64=$VRAY_PLUGINS_x64:/opt/yeti/bin
 	    export VRAY_OPENCL_PLATFORMS_x64="c++/cpu;nvidia cuda titan x (pascal) gpu index0;"
-
+	
+	# cli-vis 256 color
+	export TERM=rxvt-256color	
+	
 	# initialize houdini env
 	if [ -d "/opt/hfs" ]; then
         dir=$PWD
