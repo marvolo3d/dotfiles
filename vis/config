@@ -2,5 +2,5 @@ visualizer.spectrum.bar.spacing=1
 visualizer.spectrum.bar.width=2
 visualizer.sgs.smoothing.mode=sgs
 colors.scheme=redblue
-visualizer.spectrum.character= 
 audio.stereo.enabled=false
+audio.sources=pulse
