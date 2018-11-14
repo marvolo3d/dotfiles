@@ -19,6 +19,8 @@ alias sshmac="ssh marvolo@macpro.local"
 alias sshxeon="ssh marvolo@xeon-ws.local"
 alias sshx99="ssh marvolo@titan-x99.local"
 
+alias vis="TERM=rxvt-256color vis"
+
 if [[ `uname` == 'Darwin' ]]; then
     # osx-specific aliases
     alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
