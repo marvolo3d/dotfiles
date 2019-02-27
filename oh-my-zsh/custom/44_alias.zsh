@@ -51,5 +51,5 @@ elif [[ `uname` == 'Linux' ]]; then
 
     alias open="xdg-open"
     alias gpuwatch="watch -n 1 nvidia-smi"
-    alias mhz="watch -n1 'cat /proc/cpuinfo | grep -i mhz'"
+    alias mhz="watch -n1 'cat /proc/cpuinfo | grep -i mhz"
 fi

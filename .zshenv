@@ -38,18 +38,9 @@ if [[ `uname` == 'Darwin' ]]; then
 
 elif [[ `uname` == 'Linux' ]]; then
 
-    if [ -z $(echo $PATH | grep $HOME/bin) ]; then
-        export PATH=$PATH:$HOME/bin
-    fi
-
-    if [ -z $(echo $PATH | grep $HOME/.local/bin) ]; then
-        export PATH=$PATH:$HOME/.local/bin
-    fi
-
     # rez
     export PATH=/opt/rez/bin/rez:$PATH
-    
-    
+     
     # maya
     export MAYA_AUTOSAVE_FOLDER="/var/tmp/maya_auto"
 
@@ -99,14 +90,16 @@ elif [[ `uname` == 'Linux' ]]; then
     export REDSHIFT_LICENSEPATH="$HOME/redshift"
 
     # vray
-    export PATH=$PATH:/usr/ChaosGroup/V-Ray/Maya2018-x64/bin
-    export VRAY_VFB_SRGB=2 #off
+    # export PATH=$PATH:/usr/ChaosGroup/V-Ray/Maya2018-x64/bin
+    # export VRAY_VFB_SRGB=2 #off
     #export VRAY_VFB_SRGB=1 #on
     #export VRAY_VFB_OCIO=2 #off
-    export VRAY_VFB_OCIO=1 #on
-    export VRAY_FOR_MAYA2018_PLUGINS_x64=$VRAY_FOR_MAYA2018_PLUGINS_x64:/opt/yeti/bin
-    export VRAY_PLUGINS_x64=$VRAY_PLUGINS_x64:/opt/yeti/bin
-    export VRAY_OPENCL_PLATFORMS_x64="c++/cpu;nvidia cuda titan x (pascal) gpu index0;"
+    # export VRAY_VFB_OCIO=1 #on
+    # export VRAY_FOR_MAYA2018_PLUGINS_x64=$VRAY_FOR_MAYA2018_PLUGINS_x64:/opt/yeti/bin
+    # export VRAY_PLUGINS_x64=$VRAY_PLUGINS_x64:/opt/yeti/bin
+    # export VRAY_OPENCL_PLATFORMS_x64="c++/cpu;nvidia cuda titan x (pascal) gpu index0;"
+
+    export p=/mnt/sammy/projects
 		
     # initialize houdini env
     if [ -d "/opt/hfs" ]; then
@@ -130,6 +123,15 @@ elif [[ `uname` == 'Linux' ]]; then
             done
         fi
     fi
+
+    if [ -z $(echo $PATH | grep $HOME/bin) ]; then
+        export PATH=$PATH:$HOME/bin
+    fi
+
+    if [ -z $(echo $PATH | grep $HOME/.local/bin) ]; then
+        export PATH=$PATH:$HOME/.local/bin
+    fi
+
 fi
 
 # more os agnostic (after ALSHADERS_INSTALL is set)

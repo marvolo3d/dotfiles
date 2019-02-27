@@ -214,6 +214,16 @@ function x264_encode_slave {
     sshxeon -t "cd $PWD; RUN='x264_encode $@' zsh"
 }
 
+xp() {
+	realpath $1 | xargs echo -n | xclip -selection clipboard
+}
+
+marvelous() {
+	WINEPREFIX=/opt/marvelous_designer/wine_prefix
+       	wine start regedit.exe /opt/marvelous_designer/Crack/Reg.reg
+    	sg no-internet /opt/marvelous_designer/marvelous_root/MarvelousDesigner8_Personal_x64.exe
+}
+
 function loopvid {
     filename="$1"
     outname="${filename%.*}"
